@@ -591,6 +591,7 @@ footer a{color:var(--ink-soft)}
   var CONTACT_TO = "info@kalayaan.jp"; // 要確認: KALAYAAN の実在アドレスに合わせる
   var SUBJECT = "【無料診断】ホームページ乗り換えの申し込み";
 
+  function route(){ try{ var q=new URLSearchParams(location.search); var src=q.get("utm_source")||"direct"; var c=q.get("utm_campaign")||""; var ct=q.get("utm_content")||""; return [src,c,ct].filter(Boolean).join(" / "); }catch(e){ return "direct"; } }
   function buildMail(fields){
     var body = [
       "ホームページ乗り換え 無料診断の申し込みです。",
@@ -601,6 +602,7 @@ footer a{color:var(--ink-soft)}
       "ご連絡先メール: " + (fields.mail||""),
       "困っていること: " + (fields.pain||""),
       "",
+      "経路: " + route(),
       "（このメールは LP のフォームから作成されました）"
     ].join("\n");
     return "mailto:" + CONTACT_TO + "?subject=" + encodeURIComponent(SUBJECT) + "&body=" + encodeURIComponent(body);

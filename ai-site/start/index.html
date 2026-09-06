@@ -444,8 +444,9 @@ footer a{color:var(--ink-soft)}
   document.documentElement.classList.add("js");
   var CONTACT_TO = "info@kalayaan.jp";
   var SUBJECT = "【無料相談】はじめてのホームページ";
+  function route(){ try{ var q=new URLSearchParams(location.search); var src=q.get("utm_source")||"direct"; var c=q.get("utm_campaign")||""; var ct=q.get("utm_content")||""; return [src,c,ct].filter(Boolean).join(" / "); }catch(e){ return "direct"; } }
   function buildMail(f){
-    var body=["はじめてのホームページ 無料相談の申し込みです。","","会社名・店名: "+(f.company||""),"何をしているか: "+(f.biz||""),"お名前: "+(f.name||""),"ご連絡先メール: "+(f.mail||""),"困っていること・聞きたいこと: "+(f.pain||""),"","（このメールは LP のフォームから作成されました）"].join("\n");
+    var body=["はじめてのホームページ 無料相談の申し込みです。","","会社名・店名: "+(f.company||""),"何をしているか: "+(f.biz||""),"お名前: "+(f.name||""),"ご連絡先メール: "+(f.mail||""),"困っていること・聞きたいこと: "+(f.pain||""),"","経路: "+route(),"（このメールは LP のフォームから作成されました）"].join("\n");
     return "mailto:"+CONTACT_TO+"?subject="+encodeURIComponent(SUBJECT)+"&body="+encodeURIComponent(body);
   }
   var form=document.getElementById("diagForm");
