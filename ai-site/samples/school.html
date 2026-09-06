@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light;">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まなび塾ゆず（架空サンプル）｜AI更新ホームページの見本</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffaf0;--ink:#3b2f1e;--sub:#7a6a52;--line:#eadfc6;--yuzu:#e0a100;--yuzu-deep:#b07f00;--leaf:#4f8a3a;--card:#fffdf7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:1.8;letter-spacing:.02em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.sample{background:var(--ink);color:#fff;font-size:.78rem;text-align:center;padding:6px 10px;letter-spacing:.08em}
+header{background:#fff;border-bottom:3px solid var(--yuzu)}
+.h{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.35rem;color:var(--yuzu-deep)}
+.logo small{display:block;font-size:.7rem;color:var(--sub);letter-spacing:.18em;font-weight:500}
+nav a{font-size:.88rem;color:var(--ink);text-decoration:none;margin-left:20px}
+.cta{background:var(--yuzu);color:#fff;border-radius:999px;padding:9px 18px;font-weight:700;text-decoration:none;font-size:.9rem}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start;padding:44px 0 0}
+.hero h1{font-family:"Zen Maru Gothic",sans-serif;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.45;color:var(--ink)}
+.hero h1 b{color:var(--yuzu-deep)}
+.hero p{margin-top:14px;color:var(--sub)}
+.hero .art{aspect-ratio:4/3;border-radius:28px 28px 28px 4px;background:url(hero-school.jpg) center/cover no-repeat;position:relative;box-shadow:0 30px 60px -36px rgba(59,47,30,.6)}
+.hero .txt{padding-top:26px}
+.stripe{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:-44px 0 40px 8%;position:relative;width:84%;box-shadow:0 16px 40px -28px rgba(59,47,30,.5)}
+.stripe div{text-align:center}
+.stripe b{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:1.6rem;color:var(--yuzu-deep);line-height:1.1}
+.stripe span{font-size:.82rem;color:var(--sub)}
+h2{font-family:"Zen Maru Gothic",sans-serif;font-size:1.3rem;color:var(--ink);margin-bottom:6px}
+h2 small{font-size:.75rem;color:var(--yuzu-deep);letter-spacing:.2em;margin-left:10px;font-family:"Zen Kaku Gothic New",sans-serif}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:12px 0 40px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.c .tag{display:inline-block;font-size:.72rem;color:#fff;background:var(--leaf);border-radius:999px;padding:2px 10px}
+.c h3{font-family:"Zen Maru Gothic",sans-serif;font-size:1.05rem;margin-top:8px}
+.c p{font-size:.88rem;color:var(--sub);margin-top:4px}
+.c .fee{font-weight:700;margin-top:8px}
+.c .seat{font-size:.8rem;color:var(--yuzu-deep);margin-top:4px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;color:var(--yuzu-deep);background:#fff3cc;border-radius:999px;padding:3px 10px}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--yuzu)}
+.sched{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 22px;margin:12px 0 40px}
+.sched li{list-style:none;display:grid;grid-template-columns:120px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.sched li:last-child{border-bottom:none}.sched time{color:var(--sub);font-size:.84rem}
+.sched .new{color:var(--yuzu-deep);font-size:.72rem;font-weight:700;margin-left:8px}
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 48px}
+.v{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:.9rem}
+.v b{display:block;font-size:.8rem;color:var(--sub);margin-top:8px;font-weight:500}
+footer{background:var(--ink);color:#eadfc6;padding:26px 0;font-size:.82rem}
+footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.hero,.voices{grid-template-columns:1fr}.courses,.stripe{grid-template-columns:1fr}.stripe{margin:16px 0 32px;width:100%}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="sample">これは架空の学習塾のサンプルページです（KALAYAAN「AI更新ホームページ」の見本）</div>
+<header><div class="wrap h">
+  <div class="logo">まなび塾 ゆず<small>MANABI JUKU YUZU ・ 小1〜中3</small></div>
+  <nav><a href="#">コース</a><a href="#">料金</a><a href="#">日程</a><a href="#">合格実績</a><a href="#">アクセス</a></nav>
+  <a class="cta" href="#">無料体験に申し込む</a>
+</div></header>
+
+<section class="wrap hero">
+  <div class="art"></div>
+  <div class="txt">
+    <span class="badge">空き枠・日程は毎週更新</span>
+    <h1 style="margin-top:12px">「わかった」を、<br><b>翌日も言える</b>塾。</h1>
+    <p>1 クラス 6 人までの少人数。授業の翌日に 10 分の確認テストを LINE で届け、定着を毎週見える化します。小学生の算数・国語から、中学生の 5 科目・受験対策まで。</p>
+    <p style="margin-top:18px"><a class="cta" href="#">無料体験に申し込む</a></p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="stripe">
+    <div><b>6人</b><span>1 クラスの上限</span></div>
+    <div><b>92%</b><span>2026 春 第一志望合格（中3 在籍 25 名）</span></div>
+    <div><b>残 3 席</b><span>中 2 英数コース（10 月開講）</span></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>コースと料金<small>COURSES</small></h2>
+  <div class="courses">
+    <div class="c"><span class="tag">小学生</span><h3>算数・国語 基礎コース</h3><p>週 2 回・各 60 分。計算と読解を毎回セットで。</p><div class="fee">月 13,200 円（税込）</div><div class="seat">小 4：残 2 席／小 5：残 4 席</div></div>
+    <div class="c"><span class="tag">中学生</span><h3>英数コース</h3><p>週 2 回・各 80 分。定期テスト 2 週間前は無料補講。</p><div class="fee">月 19,800 円（税込）</div><div class="seat">中 2：残 3 席（10 月開講）</div></div>
+    <div class="c"><span class="tag">中3</span><h3>受験 5 科目コース</h3><p>週 3 回＋土曜演習。兵庫県公立入試の過去問 10 年分。</p><div class="fee">月 33,000 円（税込）</div><div class="seat">満席（キャンセル待ち受付中）</div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>日程・お知らせ<small>SCHEDULE</small></h2>
+  <ul class="sched">
+    <li><time>2026.09.05</time><span>10 月の授業カレンダーを公開しました（10/13 は休講・10/25 は模試）<span class="new">NEW</span></span></li>
+    <li><time>2026.09.03</time><span>中 2 英数コース 10 月開講、残 3 席です</span></li>
+    <li><time>2026.08.30</time><span>夏期講習の確認テスト結果を保護者 LINE に配信しました</span></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>保護者の声<small>VOICES</small></h2>
+  <div class="voices">
+    <div class="v">「翌日の 10 分テストで、何が分かっていないかが親にも見えるようになりました。」<b>中 1 保護者（架空）</b></div>
+    <div class="v">「6 人までなので質問しやすいと本人が言っています。定期テストが 20 点上がりました。」<b>中 2 保護者（架空）</b></div>
+  </div>
+</section>
+
+<footer><div class="wrap f">
+  <div>まなび塾 ゆず　神戸市灘区 0-0-0（架空）　平日 15:00〜21:30</div>
+  <div>これは KALAYAAN が制作した架空のサンプルページです。実在する塾ではなく、数値も架空です。</div>
+</div></footer>
+</body></html>

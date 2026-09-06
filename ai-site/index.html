@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIが更新するホームページへ、乗り換える。｜KALAYAAN</title>
+<meta name="description" content="いまのWordPressの中身と見た目はそのまま。AIが下書きし、あなたが承認して公開する更新体制へ。無料診断で、あなたのサイトのサイトマップ分析と乗り換え可否を1枚にしてお返しします。">
+<meta property="og:title" content="AIが更新するホームページへ、乗り換える。｜KALAYAAN">
+<meta property="og:description" content="更新が止まったホームページを、毎週動くホームページに。依頼はLINE一言、AIが下書き、あなたが承認。無料診断から。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Manrope:wght@700;800&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --numfont:"Manrope","Zen Kaku Gothic New",sans-serif;
+  --paper:#f6f3ec; --paper-deep:#efe9dd; --card:#fbf8f1;
+  --ink:#21232b; --ink-soft:#4c4e58; --hair:#d8d2c4;
+  --bengara:#a3512b; --bengara-deep:#7f3d1f; --moss:#3f5a3c;
+  --measure:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;font-size:16px;line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;padding-bottom:78px}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(33,35,43,.045) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+a{color:inherit}
+.serif{font-family:"Shippori Mincho",serif}
+.num{font-family:var(--numfont);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);z-index:10}
+.header-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logotype{font-family:"Fraunces",serif;font-weight:500;font-size:1.02rem;letter-spacing:.18em;text-decoration:none}
+.logotype small{font-family:"Shippori Mincho",serif;font-size:.7rem;letter-spacing:.28em;color:var(--ink-soft);margin-left:.9em}
+.hbtn{font-size:.82rem;letter-spacing:.1em;text-decoration:none;border:1px solid var(--ink);padding:8px 16px;border-radius:2px;transition:background .25s,color .25s}
+.hbtn:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{padding:88px 0 64px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.kicker{font-family:"Shippori Mincho",serif;font-size:.84rem;letter-spacing:.42em;color:var(--bengara);margin-bottom:26px}
+.hero h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.32;letter-spacing:.04em}
+.hero h1 .stress{color:var(--bengara)}
+.hero p.lead{margin-top:26px;font-size:1.05rem;color:var(--ink-soft);max-width:34em}
+.cta-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.08em;padding:15px 26px;border-radius:2px;border:1px solid var(--bengara);transition:transform .2s,background .25s,color .25s}
+.btn--main{background:var(--bengara);color:#fff}
+.btn--main:hover{background:var(--bengara-deep)}
+.btn--ghost{color:var(--bengara);background:transparent}
+.btn--ghost:hover{background:var(--bengara);color:#fff}
+.btn:active{transform:scale(.985)}
+.cta-note{font-size:.78rem;color:var(--ink-soft);margin-top:12px;letter-spacing:.04em}
+
+/* before/after device */
+.device{position:relative;padding:8px 0}
+.slate{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:22px 24px;position:relative;box-shadow:0 18px 40px -30px rgba(33,35,43,.45)}
+.slate + .slate{margin-top:-14px;margin-left:34px}
+.slate .lab{font-family:"Shippori Mincho",serif;font-size:.72rem;letter-spacing:.34em;color:var(--ink-soft)}
+.slate .big{font-family:var(--numfont);font-weight:800;font-size:2.2rem;line-height:1.15;margin-top:6px;letter-spacing:-.02em}
+.slate.old .big{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--bengara);text-decoration-thickness:2px}
+.slate.new{border-color:var(--bengara)}
+.slate.new .big{color:var(--bengara-deep)}
+.slate .sub{font-size:.82rem;color:var(--ink-soft);margin-top:6px}
+.slate ul{list-style:none;margin-top:10px;font-size:.84rem}
+.slate ul li{display:flex;gap:8px;align-items:flex-start;padding:3px 0}
+.slate ul li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--bengara);margin-top:.62em;flex:none}
+
+/* facts */
+.facts{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:34px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.fact{padding:0 28px;border-left:1px solid var(--hair)}
+.fact:first-child{border-left:none;padding-left:0}
+.fact .v{font-family:var(--numfont);font-weight:800;font-size:3.1rem;line-height:1;color:var(--ink);letter-spacing:-.02em}
+.fact .v b{font-weight:800;color:var(--bengara-deep)}
+.fact .k{font-size:.95rem;color:var(--ink);margin-top:10px;font-weight:500}
+.fact .s{font-size:.76rem;color:var(--ink-soft);margin-top:4px}
+
+/* offer band */
+.offer{padding:72px 0 56px}
+.sec-h{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
+.sec-h .en{font-family:var(--numfont);font-weight:800;letter-spacing:.2em;font-size:.76rem;color:var(--bengara-deep)}
+.sec-h h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.55rem;letter-spacing:.04em}
+.ladder{display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:18px;align-items:stretch}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px 26px 22px;position:relative;display:flex;flex-direction:column}
+.step.main{border:2px solid var(--bengara);transform:translateY(-10px)}
+.step .no{font-family:var(--numfont);font-weight:800;font-size:.8rem;letter-spacing:.18em;color:var(--bengara-deep)}
+.step h3{font-family:"Shippori Mincho",serif;font-size:1.15rem;margin-top:6px;letter-spacing:.03em}
+.step .price{font-family:var(--numfont);font-weight:800;font-size:3.2rem;line-height:1.05;margin:16px 0 4px;color:var(--ink);letter-spacing:-.03em}
+.step .price b{font-weight:800}
+.step.main .price b{color:var(--bengara-deep)}
+.step .price small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.95rem;color:var(--ink);letter-spacing:.04em;margin-left:8px;font-weight:700}
+.step .tax{font-size:.82rem;color:var(--ink-soft)}
+.step ul{list-style:none;margin-top:14px;font-size:.9rem;flex:1}
+.step ul li{display:flex;gap:9px;padding:4px 0;align-items:flex-start}
+.step ul li svg{margin-top:.38em;width:16px;height:16px;color:var(--moss)}
+.step .foot{font-size:.78rem;color:var(--ink-soft);margin-top:14px;border-top:1px dashed var(--hair);padding-top:10px}
+.offer-note{font-size:.84rem;color:var(--ink-soft);margin-top:22px;max-width:60em}
+
+/* samples */
+.samples{padding:8px 0 56px}
+.samples .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+.smp{background:var(--card);border:1px solid var(--hair);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .25s,transform .25s}
+.smp:hover{border-color:var(--bengara);transform:translateY(-3px)}
+.smp .shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);border-bottom:1px solid var(--hair)}
+.smp .shot img{width:100%;height:auto;display:block;object-fit:cover;object-position:top}
+.smp .shot::after{content:"サンプルを開く";position:absolute;right:10px;bottom:10px;font-size:.72rem;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:4px 10px;border-radius:2px;opacity:0;transition:opacity .25s}
+.smp:hover .shot::after{opacity:1}
+.smp .b{padding:14px 16px 16px}
+.smp .ind{font-family:var(--numfont);font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--bengara-deep)}
+.smp h3{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin-top:2px;letter-spacing:.03em}
+.smp p{font-size:.84rem;color:var(--ink-soft);margin-top:6px}
+.smp p b{color:var(--ink);font-weight:500}
+.samples .note{font-size:.8rem;color:var(--ink-soft);margin-top:14px}
+
+/* accordion */
+.body{padding:24px 0 64px}
+.acc-tools{display:flex;justify-content:flex-end;gap:14px;margin-bottom:10px}
+.acc-tools button{background:none;border:1px solid var(--hair);padding:6px 14px;border-radius:2px;font-size:.78rem;letter-spacing:.08em;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+.acc-tools button:hover{border-color:var(--ink);color:var(--ink)}
+details{border-top:1px solid var(--hair)}
+details:last-of-type{border-bottom:1px solid var(--hair)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;gap:14px;padding:26px 0}
+summary::-webkit-details-marker{display:none}
+summary .idx{font-family:var(--numfont);font-weight:800;font-size:1rem;letter-spacing:.14em;color:var(--bengara-deep)}
+summary h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.03em;line-height:1.4}
+summary .hint{font-size:.86rem;color:var(--ink-soft);margin-top:4px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400}
+summary .pm{width:40px;height:40px;border:1px solid var(--hair);border-radius:50%;position:relative;transition:transform .3s,border-color .3s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+details[open] summary .pm{border-color:var(--bengara);transform:rotate(180deg)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.panel{padding:0 0 34px 78px;max-width:62em}
+.panel p{margin:10px 0;color:var(--ink)}
+.panel p.soft{color:var(--ink-soft);font-size:.92rem}
+.panel h4{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin:22px 0 8px;letter-spacing:.03em}
+.tblwrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:11px 12px;border-top:1px solid var(--hair);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:.84rem;letter-spacing:.04em}
+tr:last-child td{border-bottom:1px solid var(--hair)}
+td.old{color:var(--ink-soft)}
+td.new{color:var(--ink);font-weight:500}
+.checks{list-style:none;margin:12px 0}
+.checks li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--hair);align-items:flex-start}
+.checks li svg{color:var(--bengara);margin-top:.28em}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.flow .f{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:14px 14px 12px;font-size:.86rem}
+.flow .f .n{font-family:var(--numfont);font-weight:800;font-size:1.5rem;color:var(--bengara-deep);line-height:1}
+.flow .f b{display:block;margin:6px 0 2px;font-family:"Shippori Mincho",serif;font-size:.98rem}
+.flow .f span{color:var(--ink-soft);font-size:.8rem}
+.mech{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;margin:18px 0}
+.mech .box{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:16px;font-size:.9rem}
+.mech .box b{display:block;font-family:"Shippori Mincho",serif;margin-bottom:4px}
+.mech .box.you{border-color:var(--bengara)}
+.mech .arr{font-family:var(--numfont);font-weight:800;color:var(--bengara-deep);font-size:1.4rem}
+.quote{border-left:3px solid var(--bengara);padding:6px 18px;margin:16px 0;color:var(--ink-soft);font-size:.94rem}
+.fn{font-size:.76rem;color:var(--ink-soft);margin-top:18px;line-height:1.7}
+.fn a{color:var(--ink-soft)}
+
+/* form */
+.contact{padding:64px 0 72px;border-top:1px solid var(--hair)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
+.contact h2{font-family:"Shippori Mincho",serif;font-size:1.7rem;line-height:1.4;letter-spacing:.03em}
+.contact p{color:var(--ink-soft);margin-top:14px}
+.form{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px}
+.form label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;margin:14px 0 6px}
+.form label:first-child{margin-top:0}
+.form input,.form textarea,.form select{width:100%;font:inherit;font-size:.95rem;padding:11px 12px;border:1px solid var(--hair);border-radius:2px;background:#fff;color:var(--ink)}
+.form textarea{min-height:96px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{outline:2px solid var(--bengara);outline-offset:1px;border-color:transparent}
+.form .submit{margin-top:20px;width:100%;justify-content:center;cursor:pointer;font:inherit;font-weight:700;letter-spacing:.1em;font-size:1rem}
+.form .alt{font-size:.8rem;color:var(--ink-soft);margin-top:12px;text-align:center}
+.form .alt a{color:var(--bengara)}
+
+/* sticky cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#21232b;background:color-mix(in srgb,var(--ink) 94%,transparent);color:var(--paper);backdrop-filter:blur(6px)}
+.sticky .in{max-width:var(--measure);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sticky .t{font-size:.9rem;letter-spacing:.04em}
+.sticky .t b{font-family:"Shippori Mincho",serif;font-weight:700}
+.sticky .btn{padding:11px 20px;font-size:.9rem;border-color:var(--paper);color:var(--paper);background:transparent}
+.sticky .btn:hover{background:var(--paper);color:var(--ink)}
+
+footer{padding:34px 0 40px;border-top:1px solid var(--hair);font-size:.8rem;color:var(--ink-soft)}
+footer .fin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink-soft)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.on{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .hero{padding:56px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .facts{grid-template-columns:1fr;gap:18px;padding:22px 0}
+  .fact{border-left:none;padding:0}
+  .ladder{grid-template-columns:1fr}
+  .step.main{transform:none}
+  .samples .grid{grid-template-columns:1fr}
+  summary{grid-template-columns:44px 1fr 36px;padding:20px 0}
+  .panel{padding-left:0}
+  .flow{grid-template-columns:1fr 1fr}
+  .mech{grid-template-columns:1fr}
+  .mech .arr{transform:rotate(90deg);text-align:center}
+  .contact-grid{grid-template-columns:1fr}
+  .sticky .t{display:none}
+  .sticky .in{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logotype" href="https://kalayaan.jp">KALAYAAN<small>マーケティング／AI活用支援</small></a>
+    <a class="hbtn" href="#contact">無料診断</a>
+  </div>
+</header>
+
+<!-- ===== HERO（常時表示） ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">ホームページ乗り換えサービス</div>
+      <h1>更新が止まった<br>ホームページを、<br><span class="stress">毎週動く</span><br>ホームページに。</h1>
+      <p class="lead">「そろそろ作り直したい」の予算で、作り直しより先に運用を変えます。いまの WordPress の中身と見た目はそのまま引き継ぎ、変わるのは「誰が更新するか」。お知らせ・休業日・新商品・実績・よくある質問――言葉で伝えるだけで AI が下書きし、あなたが承認して公開する体制に切り替えます。</p>
+      <div class="cta-row">
+        <a class="btn btn--main" href="#contact">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          無料診断を申し込む
+        </a>
+        <a class="btn btn--ghost" href="#price">料金を見る</a>
+      </div>
+      <div class="cta-note">診断は無料・営業電話はしません。現サイトのサイトマップ分析（全ページの棚卸し）と、移せるかどうかを1枚のレポートでお返しします。</div>
+    </div>
+    <div class="device">
+      <div class="slate old">
+        <div class="lab">BEFORE ─ いまのサイト</div>
+        <div class="big">最終更新 2024年8月</div>
+        <div class="sub">休業日のお知らせを1本書き換えて使い回し。商品ページは型番だけ。</div>
+        <ul>
+          <li>直したい所は制作会社に依頼、返事は翌週</li>
+          <li>WordPress とプラグインの更新通知が溜まる</li>
+        </ul>
+      </div>
+      <div class="slate new">
+        <div class="lab">AFTER ─ 乗り換え後</div>
+        <div class="big">今週の更新 3件</div>
+        <div class="sub">LINE で一言「10月の休業日を反映して」。AI が下書き、あなたが承認して公開。依頼が起点です。</div>
+        <ul>
+          <li>更新は LINE / メール 一本で完結</li>
+          <li>サーバー・プラグイン保守は消える</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3つの数字（出典は脚注） ===== -->
+<section class="wrap">
+  <div class="facts">
+    <div class="fact rv">
+      <div class="v num"><b>2.2社に1社</b></div>
+      <div class="k">ホームページの更新が「月1回以下」</div>
+      <div class="s">ペライチ調査 2024年（n=567）※1</div>
+    </div>
+    <div class="fact rv">
+      <div class="v num"><b>49.8%</b></div>
+      <div class="k">更新されていない会社は「営業しているか不安」</div>
+      <div class="s">プラスト調査 2020年（n=1,127）※2</div>
+    </div>
+    <div class="fact rv">
+      <div class="v num"><b>32.6%</b></div>
+      <div class="k">更新されていない会社とは「取引しようと思わない」</div>
+      <div class="s">同調査 ※2</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFER（常時表示） ===== -->
+<section class="offer wrap" id="price">
+  <div class="sec-h"><span class="en">PRICING</span><h2>料金は3段。入口は無料です。</h2></div>
+  <div class="ladder">
+    <div class="step rv">
+      <div class="no">STEP 01</div>
+      <h3>無料診断</h3>
+      <div class="price num"><b>0</b><small>円</small></div>
+      <div class="tax">所要 3営業日</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>サイトマップ分析（全公開ページの棚卸し）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>空のページ・重複・古い情報を一覧に</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>移せる／移せないの判定</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>乗り換え後の見本ページ（保護URL）</li>
+      </ul>
+      <div class="foot">診断だけで終わっても構いません。レポートはそのままお使いください。</div>
+    </div>
+    <div class="step main rv">
+      <div class="no">STEP 02</div>
+      <h3>乗り換え（初期費用）</h3>
+      <div class="price num"><b>30</b><small>万円（税込）</small></div>
+      <div class="tax">標準 5〜10ページ・期間 2〜3週間</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>記事・ページ・画像の移行（WordPress インポート）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>見た目の再現（デザインは現行踏襲・希望あれば刷新）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>商品・実績・FAQ の「データ化」（一覧と詳細の二重管理を解消）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>旧URLの転送設定・計測タグ移植・検索エンジンと AI が読める形の情報整理（構造化データ）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>AI更新の接続と、承認フローの設定</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ドメイン切替・公開立ち会い</li>
+      </ul>
+      <div class="foot">ページ数が多い・ECや会員機能がある場合は診断時に個別見積り。</div>
+    </div>
+    <div class="step rv">
+      <div class="no">STEP 03</div>
+      <h3>AI更新運用（月額）</h3>
+      <div class="price num"><b>1.5</b><small>万円／月（税込）</small></div>
+      <div class="tax">最低契約期間なし・月単位で解約可</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>更新代行 月 4 本まで（お知らせ・商品・FAQ 等。更新したい内容をお送りいただければ反映します）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>依頼は LINE / メール の一言で</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ホスティング・監視・バックアップ込み</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>EmDash 本体の更新追従・不具合対応</li>
+      </ul>
+      <div class="foot">月 1 回のレポート（閲覧・AI 検索での見え方・次の一手）が必要な方は 3 万円／月のプラン。追加の専用ページ（広告用LP 等）は 1本 5 万円（税込）。</div>
+    </div>
+  </div>
+  <p class="offer-note">3年間の総額は <b>30万円＋1.5万円×36ヶ月＝84万円（税込）</b>。制作会社に作り直しを頼む場合、実績調査では 100〜200万円がボリューム帯（2025年・n=120）で、これに月々の保守が別に乗ります。当社は同じ3年で、保守と更新代行を含めてこの金額です。表示価格はすべて税込です。ホスティング費はサービスに含まれ、別途のサーバー契約は不要です（ドメイン費のみお客様負担）。既に当事務所の広告運用をご利用中の方は、月額を運用手数料と束ねてご案内します。</p>
+</section>
+
+<!-- ===== SAMPLES（常時表示） ===== -->
+<section class="samples wrap" id="samples">
+  <div class="sec-h"><span class="en">SAMPLES</span><h2>こんなページになります。</h2></div>
+  <div class="grid">
+    <a class="smp" href="samples/clinic.html" target="_blank" rel="noopener">
+      <div class="shot"><img src="samples/thumb-clinic.png" alt="歯科クリニックのサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="b"><div class="ind">CLINIC</div><h3>歯科クリニック</h3><p>AI が毎月更新するもの：<b>休診日・診療時間の変更・キャンペーン・症例の追加</b>。医療広告の表現は人が確認して公開。</p></div>
+    </a>
+    <a class="smp" href="samples/optician.html" target="_blank" rel="noopener">
+      <div class="shot"><img src="samples/thumb-optician.png" alt="眼鏡店のサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="b"><div class="ind">SHOP</div><h3>眼鏡店</h3><p>AI が毎週更新するもの：<b>今週のおすすめ・新作入荷・在庫と価格・定休日</b>。商品は一覧と詳細に同時反映。</p></div>
+    </a>
+    <a class="smp" href="samples/school.html" target="_blank" rel="noopener">
+      <div class="shot"><img src="samples/thumb-school.png" alt="学習塾のサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="b"><div class="ind">SCHOOL</div><h3>学習塾</h3><p>AI が毎週更新するもの：<b>空き席数・授業カレンダー・講習の募集・合格実績</b>。季節で回る募集に追いつく。</p></div>
+    </a>
+  </div>
+  <p class="note">3 つとも架空の事業者で、写真は仮置きです。実際は現行サイトの配色・ロゴ・写真を踏襲して作ります（刷新のご希望があれば見本の段階で 2 案お出しします）。ページ内の数値・価格はすべて架空です。</p>
+</section>
+
+<!-- ===== 本文（目次型アコーディオン） ===== -->
+<section class="body wrap">
+  <div class="acc-tools">
+    <button type="button" id="openAll">すべて開く</button>
+    <button type="button" id="closeAll">すべて閉じる</button>
+  </div>
+
+  <details open>
+    <summary>
+      <span class="idx">01</span>
+      <div><h3>こんな状態なら、向いています</h3><div class="hint">5つのうち2つ当てはまれば、診断の価値があります</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>最終更新が半年以上前</b>。お知らせ欄の一番上が去年の話になっている。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>直したい箇所を誰に頼めばいいか曖昧</b>。作った会社と連絡が途切れた、または返事が遅い。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>WordPress の更新通知・セキュリティ警告を放置している</b>。誰が管理者かも分からない。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>商品・メニュー・実績が増えても、サイトに載っていない</b>。載せる手間の方が大きいから。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>Google や AI 検索で自社を調べると、古い情報が出る</b>。営業時間・価格・所在地が実態とずれている。</span></li>
+      </ul>
+      <p class="soft">診療時間・料金・プラン・講座日程のように「変わるのに載せ替えられていない情報」が多い業種（クリニック・スクール・宿泊・店舗）で効きます。医療系は広告ガイドラインに沿った人のチェックを工程に入れます。</p>
+      <p class="soft">向いていない会社もあります（08 に正直に書きました）。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">02</span>
+      <div><h3>何が変わるのか</h3><div class="hint">見た目は変わりません。変わるのは「更新の頼み方・時間・保守」の3つ</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <div class="tblwrap">
+      <table>
+        <thead><tr><th style="width:22%">項目</th><th>いま（当社が案件で見てきた典型例）</th><th>乗り換え後</th></tr></thead>
+        <tbody>
+          <tr><td>更新の頼み方</td><td class="old">メールで依頼書、修正指示、確認、再修正</td><td class="new">LINE / メールで一言。AI が下書き、あなたが承認</td></tr>
+          <tr><td>反映まで</td><td class="old">数日〜数週間</td><td class="new">当日〜翌営業日（承認したらその場で公開）</td></tr>
+          <tr><td>サーバー・CMS 保守</td><td class="old">WordPress 本体・テーマ・プラグインの更新と脆弱性対応が誰かに乗る</td><td class="new">プラグイン方式のサーバーが無い構成。保守は運用に含む</td></tr>
+          <tr><td>商品・実績・FAQ</td><td class="old">ページを1枚ずつ手で作る。一覧と詳細の二重管理になりがち</td><td class="new">データとして1回登録。一覧・詳細・検索エンジン向けの構造化データに自動反映</td></tr>
+          <tr><td>AI 検索への見え方</td><td class="old">画像に焼き込んだ文字・古い情報が引用される</td><td class="new">全文テキスト＋構造化データ＋ AI 向けサイト案内（llms.txt）を当社が標準で用意</td></tr>
+          <tr><td>費用</td><td class="old">保守月額＋更新ごとのスポット費</td><td class="new">月額 1.5 万円に更新（月 4 本まで）とホスティングを含む</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="soft">左列は当社が案件で見てきた典型例で、統計値ではありません。「AI 検索への見え方」は、検索順位や来客数を保証するものではありません。読まれる形に整えるところまでが、私たちの仕事です。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">03</span>
+      <div><h3>仕組み──AIが書き、人が公開する</h3><div class="hint">EmDash という新しい CMS の上で動きます。AI が勝手に公開することはありません</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <div class="mech">
+        <div class="box"><b>1. あなたが伝える</b>「10月の休業日は 5・12・19 日」「新作フレームを3本追加」。LINE かメールで一言。</div>
+        <div class="arr">→</div>
+        <div class="box"><b>2. AI が下書きする</b>文章・配置・写真の割り付けまで整えて、公開前の「下書き」として保存。</div>
+        <div class="arr">→</div>
+        <div class="box you"><b>3. あなたが承認して公開</b>プレビューを見て OK なら公開。修正があれば戻す。承認なしに本番は変わりません。</div>
+      </div>
+      <h4>土台に使う EmDash とは</h4>
+      <p>EmDash は 2026 年 4 月に Cloudflare が公開したオープンソースの CMS（MIT ライセンス）です。WordPress と同じ「管理画面でページや記事を書くツール」ですが、設計が新しく、次の3点が違います。Cloudflare 自身も 2026 年 8 月に自社の公式ブログをこの CMS へ移しています。</p>
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg><span><b>AI から編集できる入口（MCP）が標準で付いている</b>。私たちの AI がここに接続し、下書きの作成と更新を行います。公開は人の承認操作で行う運用にしています。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg><span><b>サーバーを借りない</b>。Cloudflare の世界中の拠点で動くため、レンタルサーバーの契約・PHP の更新・バックアップ運用がなくなります。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg><span><b>WordPress からの引っ越し道具が同梱</b>。記事・固定ページ・画像・カテゴリを読み込み、旧 URL からの転送も設定できます。</span></li>
+      </ul>
+      <p class="soft">正直な注記：EmDash は公開から 5 ヶ月の新しいソフトウェアで、開発元も「ベータ版」と明記しています（2026 年 9 月時点で 0.36、1.0 前）。公開されている本番導入事例は、いまのところ Cloudflare 自身のブログ以外に確認できていません（2026 年 9 月時点）。私たちの案件が最初期の実例になります。</p>
+      <p class="soft">私たちは自社が関与するサイトで 2026 年 7 月から実際に動かした上で採用しており、更新への追従は月額運用に含めています。万一開発が止まった場合も、書き出したコンテンツは標準的な形式（JSON / 画像、本文は Markdown 変換）で手元に残ります。詳しくは 07 のよくある質問へ。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">04</span>
+      <div><h3>乗り換えの流れ</h3><div class="hint">診断から公開まで、標準で 2〜3 週間。お客様の作業は「見て、承認する」だけ</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <div class="flow">
+        <div class="f"><div class="n">1</div><b>無料診断</b><span>URL をいただき、公開情報だけでサイトマップを分析。3営業日で1枚のレポート。</span></div>
+        <div class="f"><div class="n">2</div><b>見本ページ</b><span>あなたのサイトのトップと1ページを新環境で再現。保護 URL で確認。</span></div>
+        <div class="f"><div class="n">3</div><b>移行</b><span>全ページ・記事・画像を取り込み。商品・実績・FAQ はデータ化。旧 URL の転送表を作成。</span></div>
+        <div class="f"><div class="n">4</div><b>公開</b><span>計測タグ移植、ドメイン切替。旧サイトは一定期間並走。</span></div>
+        <div class="f"><div class="n">5</div><b>AI更新運用</b><span>初月に「更新の頼み方」を一緒に3本回して、型を作ります。</span></div>
+      </div>
+      <h4>お客様にお願いすること</h4>
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>現在のサーバー・ドメインの契約情報（どこで借りているか）</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>WordPress 管理画面からの書き出し 1 回（手順はご案内。5分）。公開 API で取れる場合は不要です</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>見本ページと移行後ページの確認・承認（各1回）</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>ドメイン切替日の決定（営業への影響が少ない日を選びます）</span></li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">05</span>
+      <div><h3>料金に含まれるもの・含まれないもの</h3><div class="hint">後から「別料金です」を言わないために、先に書きます</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <div class="tblwrap">
+      <table>
+        <thead><tr><th style="width:30%">区分</th><th>含まれる</th><th>含まれない（別途）</th></tr></thead>
+        <tbody>
+          <tr><td>乗り換え 初期費用<br><span class="num">30</span>万円（税込）</td>
+              <td>5〜10 ページの移行／デザイン踏襲／商品・実績・FAQ のデータ化（〜100 件）／旧 URL 転送／計測タグ移植／構造化データ・llms.txt／AI 接続・承認フロー／ドメイン切替・公開立ち会い／<b>既存ページの内容修正</b>（古い情報の更新・文言の直し・不要ページの整理。見本ページ確認時のご指示分）</td>
+              <td>11 ページ以降（1 ページ 1 万円）／新しいページ・新しい文章の書き起こし（専用ページ追加 5 万円／本、または月額運用の更新枠で順次）／EC・会員・予約などの機能開発／ロゴ・ブランド刷新／構成を大きく組み替えるリニューアル（別途お見積り）</td></tr>
+          <tr><td>AI更新運用 月額<br><span class="num">1.5</span>万円（税込）</td>
+              <td>更新代行 月 4 本まで（更新内容をお送りいただいた分を反映。使わない月があっても構いません）／ホスティング・監視・バックアップ／不具合対応／EmDash 本体の更新追従</td>
+              <td>月 5 本目以降の更新（1 本 5,000 円）／月次レポート（下記プラン）／広告運用・SNS 運用／写真撮影・取材</td></tr>
+          <tr><td>レポート付き運用 月額<br><span class="num">3</span>万円（税込）</td>
+              <td>上記すべて＋月 1 回のレポート（閲覧数・問い合わせ・AI 検索での見え方・次の一手の提案）</td>
+              <td>同上</td></tr>
+          <tr><td>専用ページ追加<br><span class="num">5</span>万円／本（税込）</td>
+              <td>広告用・キャンペーン用の 1 枚ページ。構成・文章・計測まで</td>
+              <td>広告費そのもの／有料素材</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="soft">ドメインの年間費用（1,000〜5,000 円程度）はお客様名義で継続いただきます。旧サーバーの解約は、公開後の並走期間が終わってから行ってください。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">06</span>
+      <div><h3>この型で作ったもの（デモ・診断）</h3><div class="hint">提案用のデモと、公開情報だけの診断です。社名と特定できる細部は伏せています</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <h4>医療関連の受託企業 ── コーポレートサイト 27 ページ（提案用デモ）</h4>
+      <p>当社が提案用に制作したデモです（先方の採用・公開はまだありません）。既存サイトは事業紹介の多くが画像に文字を焼き込んだ形で、検索エンジンや AI から読める本文は 1 ページあたり 15 文字ほどでした。EmDash 上に同じ情報構造で再構築し、9 本のサービス紹介を全文テキスト化。読める本文は 1 ページ 2,400〜5,000 文字になりました。AI からの編集接続も実機で確認済みで、「数字を 1 箇所直すと関連ページが同時に変わる」ところまで動いています。</p>
+      <div class="quote">27 ページの組み替えは一晩。トップページの完全再現を含めて数日で、私たちの AI が実装し、人が確認しました。</div>
+      <h4>小売店 ── 構造診断（公開情報のみ）</h4>
+      <p>無料診断と同じ手順で、公開情報だけを解剖した例です（当該企業の許諾は取得前のため、社名・特定できる細部は伏せています）。公開 URL 約 90 本のうち、来訪者に見せられる中身が入っていたのは約 4 分の 1（25%）。商品約 50 点は一覧を手書きで、個別ページは写真も価格も無い空の型で、二重管理になっていました。商品にデータを入れれば、同じ数え方で約 80% まで上がる計算になります（試算）。</p>
+      <p class="soft">25% とページ数・文字数は実測値、80% は同じ数え方での試算です。いずれも効果（来客数・売上）の実績ではありません。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">07</span>
+      <div><h3>よくある質問</h3><div class="hint">SEO は落ちない？ 自分でも直せる？ EmDash が無くなったら？</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <h4>検索順位は落ちませんか</h4>
+      <p>旧 URL から新 URL への転送（301）を全ページ分設定し、タイトル・本文・画像の代替テキストを引き継ぎます。転送を正しく設定するのが移転の基本の作法ですが、順位そのものは保証できません。移行前後の検索流入は、公開から 3 ヶ月の時点で一度並べてお見せします（毎月の追跡はレポート付きプランで）。</p>
+      <h4>移行のときに、内容も直せますか</h4>
+      <p>直せます。3 段階で考えています。①既存ページの中の修正（古い営業時間・価格・実績の更新、文言の直し、不要ページの整理）は乗り換え費用に含みます。見本ページを確認いただく時に赤字を入れてください。②新しいページや新しい文章の書き起こしは、専用ページ追加（5 万円／本）か、公開後の月額運用の更新枠（月 4 本まで）で順次進めます。移行時に全部を直しきる必要はなく、公開してから毎月直していけるのがこの仕組みの利点です。③構成そのものを組み替えるリニューアルは別途お見積りです。</p>
+      <h4>見た目は変わりますか</h4>
+      <p>標準は現行デザインの踏襲です。「ついでに刷新したい」場合は、見本ページの段階で 2 案お出しします（刷新は初期費用の範囲内で対応できるものと、別途見積りになるものがあります）。</p>
+      <h4>自分でも直せますか</h4>
+      <p>直せます。EmDash には WordPress と同じような管理画面があり、パスキー（指紋・顔認証）でログインします。ただし年に数回の更新なら、私たちに一言送る方が早いです。両方使えます。</p>
+      <h4>AI が勝手に間違ったことを公開しませんか</h4>
+      <p>私たちの運用では起きない設計にしています。この CMS では「下書き」と「公開中のページ」が別に保存され、下書きを更新しても公開ページは変わりません。AI の接続は下書きの作成・更新までに限定し、公開はプレビューを確認した人（あなた、または承認を受けた私たち）の操作で行います。</p>
+      <h4>EmDash という CMS が無くなったらどうなりますか</h4>
+      <p>EmDash はオープンソース（MIT ライセンス）で、コードは公開されています。開発元が手を引いても、動いているサイトが止まるわけではありません。加えて、ご要望に応じて全コンテンツを標準形式（JSON / 画像ファイル、本文は Markdown 変換）で書き出してお渡しします。別の CMS へ移る自由は常に手元に残ります。</p>
+      <h4>契約期間の縛りはありますか</h4>
+      <p>ありません。月額運用は月単位で解約できます。解約時はコンテンツ一式とドメイン設定の引き渡しを行います。</p>
+      <h4>他社の「EmDash 移行サービス」と何が違いますか</h4>
+      <p>移行作業だけを数万円で請ける事業者は国内外にあります。私たちが売っているのは移行ではなく、その後「AI が更新し続ける状態」です。乗り換え費用には商品・実績・FAQ のデータ化と AI 接続・承認フローの設定まで含み、月額では更新代行とホスティングをまとめて引き受けます。移行だけをご希望の場合は、そうした事業者の方が安く済むとお伝えします。</p>
+      <h4>WordPress のプラグインで使っていた機能はどうなりますか</h4>
+      <p>お問い合わせフォーム・地図・SNS 埋め込み・アクセス解析は標準で対応します。予約システム・EC・会員機能は、外部サービス連携で残すか、対象外とするかを診断時に判定します。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <span class="idx">08</span>
+      <div><h3>向いていない方</h3><div class="hint">お互いの時間を無駄にしないために</div></div>
+      <span class="pm"></span>
+    </summary>
+    <div class="panel">
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>EC（ネットショップ）や会員制サイトが主役</b>の方。決済・在庫・会員管理は専用サービスの方が向いています。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>社内に Web 担当がいて、毎週自分たちで更新できている</b>方。いまの体制で十分です。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>WordPress の特定プラグインに業務が深く依存している</b>方（予約・LMS・多言語の複雑構成など）。診断で「移さない方がいい」とお伝えすることがあります。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>ホームページで集客の大半を賄いたい</b>方。店舗の来客は Google ビジネスプロフィールと広告の影響が大きく、CMS を替えるだけで来客は動きません。その場合は広告運用や地図対策を先にご提案します。</span></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ===== CONTACT（常時表示） ===== -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker">FREE DIAGNOSIS</div>
+      <h2>まず、いまのサイトを<br>1枚で解剖します。</h2>
+      <p>URL と連絡先だけで始められます。3 営業日以内に「サイトマップ分析（全ページの棚卸し）」「移せる／移せない」「乗り換え後の見本ページ」をお送りします。診断だけで終わっても、費用は一切かかりません。</p>
+      <p class="soft" style="font-size:.86rem">送信ボタンを押すと、入力内容を本文にしたメール作成画面が開きます。そのまま送信してください（サーバーにデータを保存しない方式のため）。</p>
+    </div>
+    <form class="form" id="diagForm">
+      <label for="f_url">ホームページの URL <span style="color:var(--bengara)">*</span></label>
+      <input id="f_url" name="url" type="url" placeholder="https://" required>
+      <label for="f_company">会社名・店名 <span style="color:var(--bengara)">*</span></label>
+      <input id="f_company" name="company" type="text" required>
+      <label for="f_name">お名前 <span style="color:var(--bengara)">*</span></label>
+      <input id="f_name" name="name" type="text" required>
+      <label for="f_mail">ご連絡先メール <span style="color:var(--bengara)">*</span></label>
+      <input id="f_mail" name="mail" type="email" required>
+      <label for="f_pain">いま困っていること（任意）</label>
+      <textarea id="f_pain" name="pain" placeholder="例：休業日のお知らせを直したいが、制作会社と連絡が取れない"></textarea>
+      <button class="btn btn--main submit" type="submit">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        無料診断を申し込む
+      </button>
+      <div class="alt">メールで直接：<a id="mailDirect" href="#">こちら</a></div>
+      <div class="alt" id="mailFallback" hidden>メール作成画面が開かない場合は、<a id="mailDirect2" href="#">この宛先</a>に URL とご連絡先をお送りください。</div>
+      <div class="alt" style="text-align:left;margin-top:14px">ご入力いただいた情報は無料診断のご連絡にのみ使用し、第三者に提供しません（<a href="privacy.html">個人情報の取扱い</a>）。</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fin">
+    <div>運営：KALAYAAN（個人事業／マーケティング・AI活用支援）　<a href="company.html">事業者情報</a>　<a href="privacy.html">個人情報の取扱い</a>　<a href="https://kalayaan.jp">kalayaan.jp</a></div>
+    <div style="max-width:60em">掲載の実績数値は各サイトの実測値であり、来客・売上の効果を示すものではありません。<br>
+※1 ペライチ「ホームページ運用に関する調査」2024年7月、HP制作・運用に携わる有職者 n=567。※2 プラスト「中小企業のホームページ運用に関する調査」2020年9月、従業員50人未満の中小企業経営者 n=1,127（更新されていないHPを見た印象として「営業しているか不安」49.8%、「取引しようと思わない」32.6%）。</div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <div class="in">
+    <div class="t"><b>無料診断</b>　3営業日でサイトマップ分析と見本ページをお返しします</div>
+    <a class="btn" href="#contact">無料診断を申し込む</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  // ---- 連絡先（ここだけ変えれば全CTAに反映） ----
+  var CONTACT_TO = "info@kalayaan.jp"; // 要確認: KALAYAAN の実在アドレスに合わせる
+  var SUBJECT = "【無料診断】ホームページ乗り換えの申し込み";
+
+  function buildMail(fields){
+    var body = [
+      "ホームページ乗り換え 無料診断の申し込みです。",
+      "",
+      "URL: " + (fields.url||""),
+      "会社名・店名: " + (fields.company||""),
+      "お名前: " + (fields.name||""),
+      "ご連絡先メール: " + (fields.mail||""),
+      "困っていること: " + (fields.pain||""),
+      "",
+      "（このメールは LP のフォームから作成されました）"
+    ].join("\n");
+    return "mailto:" + CONTACT_TO + "?subject=" + encodeURIComponent(SUBJECT) + "&body=" + encodeURIComponent(body);
+  }
+  var form = document.getElementById("diagForm");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = {};
+    ["url","company","name","mail","pain"].forEach(function(k){ f[k] = form.elements[k].value.trim(); });
+    window.location.href = buildMail(f);
+    var fb = document.getElementById("mailFallback"); fb.hidden = false;
+  });
+  var direct = "mailto:" + CONTACT_TO + "?subject=" + encodeURIComponent(SUBJECT);
+  document.getElementById("mailDirect").href = direct;
+  document.getElementById("mailDirect2").href = direct;
+  document.getElementById("mailDirect2").textContent = CONTACT_TO;
+
+  // ---- アコーディオン ----
+  var ds = Array.prototype.slice.call(document.querySelectorAll("details"));
+  document.getElementById("openAll").onclick = function(){ ds.forEach(function(d){ d.open = true; }); };
+  document.getElementById("closeAll").onclick = function(){ ds.forEach(function(d){ d.open = false; }); };
+
+  // ---- reveal ----
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("on"); io.unobserve(en.target);} }); }, {threshold:.15});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

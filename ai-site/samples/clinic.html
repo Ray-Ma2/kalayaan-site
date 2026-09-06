@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light;">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ひかり歯科クリニック（架空サンプル）｜AI更新ホームページの見本</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7fbfb;--ink:#173c3b;--sub:#5c7a79;--line:#d7e6e5;--teal:#1f8a83;--teal-deep:#146a65;--mint:#e3f3f1;--sun:#f2b94a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:1.8;letter-spacing:.02em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.sample{background:var(--ink);color:#fff;font-size:.78rem;text-align:center;padding:6px 10px;letter-spacing:.08em}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.h{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:1.25rem;color:var(--teal-deep)}
+.logo small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:.7rem;color:var(--sub);letter-spacing:.2em;font-weight:400}
+nav a{font-size:.88rem;color:var(--ink);text-decoration:none;margin-left:22px}
+.tel{background:var(--teal);color:#fff;border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:700;text-decoration:none}
+.hero{position:relative;min-height:560px;background:url(hero-clinic.jpg) center/cover no-repeat;display:flex;align-items:flex-end}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,60,59,0) 40%,rgba(23,60,59,.28))}
+.hero .card{position:relative;margin:0 0 40px;max-width:560px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:16px;padding:30px 34px;box-shadow:0 24px 50px -30px rgba(23,60,59,.6)}
+.hero h1{font-family:"Zen Old Mincho",serif;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.4;color:var(--teal-deep)}
+.hero p{margin-top:14px;color:var(--sub);font-size:.95rem}
+.hero .cta2{display:inline-block;margin-top:16px;background:var(--teal);color:#fff;border-radius:999px;padding:10px 20px;font-weight:700;text-decoration:none;font-size:.9rem}
+.hours{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:28px 0 40px}
+.hours table{border-collapse:collapse;font-size:.88rem}
+.hours th,.hours td{padding:6px 10px;text-align:center;border-bottom:1px solid var(--line)}
+.hours th{background:var(--mint);font-weight:500}
+.hours .note{font-size:.8rem;color:var(--sub)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;color:var(--teal-deep);background:var(--mint);border-radius:999px;padding:3px 10px}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:12px 0 40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-family:"Zen Old Mincho",serif;font-size:1.05rem;color:var(--teal-deep)}
+.card p{font-size:.88rem;color:var(--sub);margin-top:6px}
+.card .price{font-weight:700;color:var(--ink);margin-top:8px}
+h2{font-family:"Zen Old Mincho",serif;font-size:1.3rem;color:var(--teal-deep);margin-bottom:6px}
+h2 small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.75rem;color:var(--sub);letter-spacing:.2em;margin-left:10px}
+.news{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 22px;margin:12px 0 40px}
+.news li{list-style:none;display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.news li:last-child{border-bottom:none}
+.news time{color:var(--sub);font-size:.84rem}
+.news .new{color:var(--teal);font-size:.72rem;font-weight:700;margin-left:8px}
+.doctor{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin:12px 0 40px}
+.doctor .ph{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#bfe1dc,#8fc8c1)}
+.doctor p{font-size:.9rem;color:var(--sub)}
+.faq{margin:12px 0 48px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin-bottom:8px}
+.faq summary{cursor:pointer;font-weight:500}
+.faq p{font-size:.88rem;color:var(--sub);margin-top:6px}
+footer{background:var(--ink);color:#d7e6e5;padding:28px 0;font-size:.82rem}
+footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.hero{min-height:480px}.hours,.doctor{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="sample">これは架空の歯科クリニックのサンプルページです（KALAYAAN「AI更新ホームページ」の見本）</div>
+<header><div class="wrap h">
+  <div class="logo">ひかり歯科クリニック<small>HIKARI DENTAL CLINIC ・ 神戸市東灘区</small></div>
+  <nav><a href="#">診療案内</a><a href="#">料金</a><a href="#">医師紹介</a><a href="#">お知らせ</a><a href="#">アクセス</a></nav>
+  <a class="tel" href="#">WEB予約</a>
+</div></header>
+
+<section class="hero"><div class="wrap" style="width:100%">
+  <div class="card">
+    <span class="badge">最終更新 今週</span>
+    <h1 style="margin-top:10px">痛くなる前に、<br>通いたくなる歯医者へ。</h1>
+    <p>予防を中心に、むし歯・歯周病・小児歯科・ホワイトニングまで。土曜も診療。JR住吉駅から徒歩 4 分、キッズスペースあり。</p>
+    <a class="cta2" href="#">WEB 予約はこちら</a>
+  </div>
+</div></section>
+
+<section class="wrap">
+  <div class="hours">
+    <table>
+      <tr><th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
+      <tr><td>9:30〜13:00</td><td>●</td><td>●</td><td>●</td><td>—</td><td>●</td><td>●</td><td>—</td></tr>
+      <tr><td>14:30〜19:00</td><td>●</td><td>●</td><td>●</td><td>—</td><td>●</td><td>▲</td><td>—</td></tr>
+    </table>
+    <div class="note">▲ 土曜午後は 17:00 まで／休診：木・日・祝<br><b>10 月の休診日</b>：5日（日）・12日（日）・13日（祝）・19日（日）・26日（日）<br><span class="badge">休診日は毎月 AI が更新・院長が承認</span></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>診療案内<small>SERVICES</small></h2>
+  <div class="grid3">
+    <div class="card"><h3>予防歯科・クリーニング</h3><p>3 ヶ月ごとの定期検診とプロのクリーニングで、削らない歯を守ります。</p><div class="price">保険適用 約 3,000 円〜</div></div>
+    <div class="card"><h3>小児歯科</h3><p>フッ素塗布・シーラント・仕上げ磨きの指導。キッズスペースで待ち時間も安心。</p><div class="price">保険適用</div></div>
+    <div class="card"><h3>ホワイトニング</h3><p>オフィス 1 回 60 分。結婚式・面接前のご相談が増えています。</p><div class="price">22,000 円（税込）</div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>お知らせ<small>NEWS</small></h2>
+  <ul class="news">
+    <li><time>2026.09.05</time><span>10 月の休診日と、土曜午後の診療時間変更のご案内<span class="new">NEW</span></span></li>
+    <li><time>2026.09.01</time><span>小児フッ素塗布の秋キャンペーン（9/30 まで）を開始しました</span></li>
+    <li><time>2026.08.22</time><span>ホワイトニングの症例写真を 3 件追加しました</span></li>
+    <li><time>2026.08.12</time><span>お盆期間（8/13〜15）の診療について</span></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>医師紹介<small>DOCTOR</small></h2>
+  <div class="doctor">
+    <div class="ph"></div>
+    <div><b>院長　光井 奏（みつい かなで）</b>　日本歯科保存学会 認定医<br><p>大学病院で 8 年、予防歯科を専門に診療。「削る前に、守る」を診療方針に、2019 年に当院を開設しました。お子さまの初めての歯医者さんも、どうぞ安心しておまかせください。</p></div>
+  </div>
+</section>
+
+<section class="wrap faq">
+  <h2>よくあるご質問<small>FAQ</small></h2>
+  <details open><summary>初診の予約は必要ですか</summary><p>WEB 予約が便利です。お急ぎの痛みの場合はお電話ください。当日枠を確保しています。</p></details>
+  <details><summary>駐車場はありますか</summary><p>提携コインパーキング（徒歩 1 分）の 60 分無料券をお渡しします。</p></details>
+  <details><summary>子どもだけで通院できますか</summary><p>小学生以上は保護者の同意書があれば可能です。初回は保護者の方とお越しください。</p></details>
+</section>
+
+<footer><div class="wrap f">
+  <div>ひかり歯科クリニック　神戸市東灘区住吉本町 0-0-0（架空）　TEL 000-000-0000</div>
+  <div>これは KALAYAAN が制作した架空のサンプルページです。実在する医院ではありません。</div>
+</div></footer>
+</body></html>

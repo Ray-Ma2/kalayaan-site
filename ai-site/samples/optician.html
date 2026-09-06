@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light;">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メガネのいわた（架空サンプル）｜AI更新ホームページの見本</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--ink:#232323;--sub:#6b665c;--line:#ddd6c8;--brass:#8a6a2f;--card:#fbf9f4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:1.8;letter-spacing:.02em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.sample{background:var(--ink);color:#fff;font-size:.78rem;text-align:center;padding:6px 10px;letter-spacing:.08em}
+header{border-bottom:1px solid var(--line)}
+.h{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.3rem;letter-spacing:.12em}
+.logo small{display:block;font-family:"Fraunces",serif;font-weight:300;font-size:.7rem;letter-spacing:.3em;color:var(--sub)}
+nav a{font-size:.86rem;color:var(--ink);text-decoration:none;margin-left:22px;letter-spacing:.08em}
+.hero{position:relative;min-height:600px;background:url(hero-optician.jpg) center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,16,10,.55),rgba(20,16,10,.25) 60%,rgba(20,16,10,.5))}
+.hero .in{position:relative;max-width:680px;padding:40px 24px}
+.hero .since{font-family:"Fraunces",serif;font-weight:300;letter-spacing:.34em;font-size:.8rem;color:#e8d9b5}
+.hero h1{font-family:"Shippori Mincho",serif;font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.45;letter-spacing:.1em;margin-top:14px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero h1 em{font-style:normal;color:#e8c777}
+.hero p{margin-top:18px;color:#efe7d6;font-size:.98rem}
+.hero .line{width:44px;height:1px;background:#e8c777;margin:22px auto 0}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;color:var(--brass);border:1px solid var(--brass);border-radius:999px;padding:3px 10px}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass)}
+.hero .badge{color:#e8c777;border-color:#e8c777;margin-top:22px}.hero .badge::before{background:#e8c777}
+h2{font-family:"Shippori Mincho",serif;font-size:1.3rem;letter-spacing:.06em;margin:40px 0 6px}
+h2 small{font-family:"Fraunces",serif;font-weight:300;font-size:.75rem;letter-spacing:.25em;color:var(--brass);margin-left:12px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 44px}
+.p{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.p .ph{aspect-ratio:1;background:linear-gradient(135deg,#e9e2d3,#d5c9ae);position:relative}
+.p .ph::before{content:"";position:absolute;inset:30% 14%;border:2px solid rgba(35,35,35,.5);border-radius:45%/55%}
+.p .b{padding:12px 14px}
+.p .brand{font-size:.72rem;color:var(--sub);letter-spacing:.14em}
+.p .name{font-weight:500}
+.p .price{font-family:"Fraunces",serif;color:var(--brass);margin-top:4px}
+.p .price small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.7rem;color:var(--sub)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 44px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 22px}
+.box h3{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin-bottom:6px}
+.box p{font-size:.9rem;color:var(--sub)}
+.box ul{margin:8px 0 0 18px;font-size:.9rem}
+.news{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:6px 22px;margin:14px 0 44px}
+.news li{list-style:none;display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.news li:last-child{border-bottom:none}.news time{color:var(--sub);font-size:.84rem}
+.news .new{color:var(--brass);font-size:.72rem;font-weight:700;margin-left:8px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 48px}
+.info table{width:100%;border-collapse:collapse;font-size:.9rem}
+.info th{text-align:left;width:34%;color:var(--sub);font-weight:500;padding:8px 0;border-bottom:1px solid var(--line)}
+.info td{padding:8px 0;border-bottom:1px solid var(--line)}
+.map{background:linear-gradient(135deg,#e4ded0,#d2cab6);border-radius:4px;min-height:200px;position:relative}
+.map span{position:absolute;left:16px;bottom:12px;font-size:.76rem;background:rgba(255,255,255,.75);padding:3px 9px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:var(--sub)}
+footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){.hero{min-height:520px}.two,.info{grid-template-columns:1fr}.products{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="sample">これは架空の眼鏡店のサンプルページです（KALAYAAN「AI更新ホームページ」の見本）</div>
+<header><div class="wrap h">
+  <div class="logo">メガネのいわた<small>IWATA OPTICAL ・ SINCE 1978</small></div>
+  <nav><a href="#">商品</a><a href="#">レンズについて</a><a href="#">修理・調整</a><a href="#">お知らせ</a><a href="#">店舗案内</a></nav>
+</div></header>
+
+<section class="hero"><div class="in">
+  <div class="since">IWATA OPTICAL ・ SINCE 1978</div>
+  <h1>見えにくさは、<br><em>測り方</em>で変わる。</h1>
+  <div class="line"></div>
+  <p>両眼視機能検査で「疲れない度数」を出し、鯖江のフレームを一本一本フィッティング。遠近両用・お子さまの初めてのメガネ・スポーツ用まで。</p>
+  <span class="badge">在庫・価格は今週更新</span>
+</div></section>
+
+<section class="wrap">
+  <h2>今週のおすすめ<small>PRODUCTS</small></h2>
+  <div class="products">
+    <div class="p"><div class="ph"></div><div class="b"><div class="brand">TONY SAME ／ 鯖江</div><div class="name">TS-10764　ブラウンデミ</div><div class="price">41,800<small> 円（税込）</small></div></div></div>
+    <div class="p"><div class="ph"></div><div class="b"><div class="brand">LINDBERG</div><div class="name">Air Titanium Rim</div><div class="price">77,000<small> 円〜（税込）</small></div></div></div>
+    <div class="p"><div class="ph"></div><div class="b"><div class="brand">ATTRACT ／ 鯖江</div><div class="name">小顔向けメタル 47□19</div><div class="price">39,600<small> 円（税込）</small></div></div></div>
+    <div class="p"><div class="ph"></div><div class="b"><div class="brand">OAKLEY</div><div class="name">度付きスポーツサングラス</div><div class="price">29,700<small> 円〜（税込）</small></div></div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="two">
+    <div class="box"><h3>レンズの選び方</h3><p>遠近両用・中近・近々・ブルーライト・調光。使う場面から一緒に選びます。</p><ul><li>6 ヶ月の度数保証</li><li>他店購入フレームへのレンズ入替も可</li></ul></div>
+    <div class="box"><h3>修理・調整</h3><p>鼻パッド交換・ネジ締め・ゆがみ直しは無料〜 900 円。他店のメガネもどうぞ。</p><ul><li>下取り：11,000 円以上のご購入で 1 本 3,000 円</li></ul></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>お知らせ<small>NEWS</small></h2>
+  <ul class="news">
+    <li><time>2026.09.05</time><span>10 月の定休日（毎週水曜＋10/13）と営業時間のご案内<span class="new">NEW</span></span></li>
+    <li><time>2026.09.02</time><span>鯖江「トニーセイム」秋の新作 6 型が入荷しました</span></li>
+    <li><time>2026.08.26</time><span>お子さまの視力検査キャンペーン（9 月末まで・無料）</span></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>店舗案内<small>SHOP</small></h2>
+  <div class="info">
+    <table>
+      <tr><th>営業時間</th><td>10:00〜19:00</td></tr>
+      <tr><th>定休日</th><td>水曜日（祝日の場合は営業）</td></tr>
+      <tr><th>所在地</th><td>神戸市東灘区御影 0-0-0（架空）</td></tr>
+      <tr><th>アクセス</th><td>阪神御影駅 徒歩 3 分／駐車場 2 台</td></tr>
+      <tr><th>お支払い</th><td>現金・各種カード・PayPay・交通系 IC</td></tr>
+    </table>
+    <div class="map"><span>地図（Google マップ埋め込み）</span></div>
+  </div>
+</section>
+
+<footer><div class="wrap f">
+  <div>メガネのいわた　神戸市東灘区御影 0-0-0（架空）</div>
+  <div>これは KALAYAAN が制作した架空のサンプルページです。実在する店舗ではありません。</div>
+</div></footer>
+</body></html>
