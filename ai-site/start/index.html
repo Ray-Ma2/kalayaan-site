@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はじめてのホームページ、1 週間で。｜KALAYAAN</title>
+<meta name="description" content="ホームページをまだ持っていない小さな会社・お店・教室のために。LINE で 10 の質問に答えると、AI が下書きしたサンプルページが無料で届きます。気に入ったら 3 万円で正規版に。公開後は月 1 万円で更新も任せられます。">
+<meta property="og:title" content="はじめてのホームページ、1 週間で。｜KALAYAAN">
+<meta property="og:description" content="10 の質問に答えると、サンプルページが無料で届く。気に入ったら 3 万円で正規版に。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Manrope:wght@700;800&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --numfont:"Manrope","Zen Kaku Gothic New",sans-serif;
+  --paper:#f6f3ec; --paper-deep:#efe9dd; --card:#fbf8f1;
+  --ink:#21232b; --ink-soft:#4c4e58; --hair:#d8d2c4;
+  --bengara:#a3512b; --bengara-deep:#7f3d1f; --moss:#3f5a3c;
+  --measure:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;font-size:16px;line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;padding-bottom:78px}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(33,35,43,.045) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+a{color:inherit}
+.num{font-family:var(--numfont);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);z-index:10}
+.header-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logotype{font-family:"Fraunces",serif;font-weight:500;font-size:1.02rem;letter-spacing:.18em;text-decoration:none}
+.logotype small{font-family:"Shippori Mincho",serif;font-size:.7rem;letter-spacing:.28em;color:var(--ink-soft);margin-left:.9em}
+.hbtn{font-size:.82rem;letter-spacing:.1em;text-decoration:none;border:1px solid var(--ink);padding:8px 16px;border-radius:2px;transition:background .25s,color .25s}
+.hbtn:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{padding:84px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.kicker{font-family:"Shippori Mincho",serif;font-size:.84rem;letter-spacing:.42em;color:var(--bengara);margin-bottom:26px}
+.hero h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(1.9rem,4.2vw,3.1rem);line-height:1.32;letter-spacing:.04em}
+.hero h1 .stress{color:var(--bengara)}
+.hero p.lead{margin-top:26px;font-size:1.05rem;color:var(--ink-soft);max-width:34em}
+.cta-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.08em;padding:15px 26px;border-radius:2px;border:1px solid var(--bengara);transition:transform .2s,background .25s,color .25s}
+.btn--main{background:var(--bengara);color:#fff}
+.btn--main:hover{background:var(--bengara-deep)}
+.btn--ghost{color:var(--bengara);background:transparent}
+.btn--ghost:hover{background:var(--bengara);color:#fff}
+.cta-note{font-size:.78rem;color:var(--ink-soft);margin-top:12px;letter-spacing:.04em}
+
+/* hero device: the 3 steps as a chat-like stack */
+.device{display:flex;flex-direction:column;gap:12px}
+.bub{position:relative;background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:16px 18px;max-width:86%;box-shadow:0 18px 40px -30px rgba(33,35,43,.45)}
+.bub.you{align-self:flex-start}
+.bub.ai{align-self:flex-end;border-color:var(--bengara)}
+.bub .who{font-family:var(--numfont);font-weight:800;font-size:.7rem;letter-spacing:.2em;color:var(--bengara-deep)}
+.bub .t{margin-top:4px;font-size:.92rem}
+.bub .big{font-family:var(--numfont);font-weight:800;font-size:1.6rem;line-height:1.2;color:var(--bengara-deep);margin-top:4px}
+.bub .day{font-size:.74rem;color:var(--ink-soft);margin-top:6px}
+
+/* facts */
+.facts{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:34px 0;display:grid;grid-template-columns:repeat(3,1fr)}
+.fact{padding:0 28px;border-left:1px solid var(--hair)}
+.fact:first-child{border-left:none;padding-left:0}
+.fact .v{font-family:var(--numfont);font-weight:800;font-size:3.1rem;line-height:1;color:var(--ink);letter-spacing:-.02em}
+.fact .v b{color:var(--bengara-deep)}
+.fact .k{font-size:.95rem;color:var(--ink);margin-top:10px;font-weight:500}
+.fact .s{font-size:.76rem;color:var(--ink-soft);margin-top:4px}
+
+/* offer */
+.offer{padding:72px 0 56px}
+.sec-h{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
+.sec-h .en{font-family:var(--numfont);font-weight:800;letter-spacing:.2em;font-size:.76rem;color:var(--bengara-deep)}
+.sec-h h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.55rem;letter-spacing:.04em}
+.ladder{display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:18px;align-items:stretch}
+.step{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px 26px 22px;display:flex;flex-direction:column}
+.step.main{border:2px solid var(--bengara);transform:translateY(-10px)}
+.step .no{font-family:var(--numfont);font-weight:800;font-size:.8rem;letter-spacing:.18em;color:var(--bengara-deep)}
+.step h3{font-family:"Shippori Mincho",serif;font-size:1.15rem;margin-top:6px;letter-spacing:.03em}
+.step .price{font-family:var(--numfont);font-weight:800;font-size:3.2rem;line-height:1.05;margin:16px 0 4px;color:var(--ink);letter-spacing:-.03em}
+.step.main .price b{color:var(--bengara-deep)}
+.step .price small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:.95rem;color:var(--ink);letter-spacing:.04em;margin-left:8px;font-weight:700}
+.step .tax{font-size:.82rem;color:var(--ink-soft)}
+.step ul{list-style:none;margin-top:14px;font-size:.9rem;flex:1}
+.step ul li{display:flex;gap:9px;padding:4px 0;align-items:flex-start}
+.step ul li svg{margin-top:.38em;width:16px;height:16px;color:var(--moss)}
+.step .foot{font-size:.78rem;color:var(--ink-soft);margin-top:14px;border-top:1px dashed var(--hair);padding-top:10px}
+.offer-note{font-size:.84rem;color:var(--ink-soft);margin-top:22px;max-width:60em}
+
+/* samples */
+.samples{padding:8px 0 56px}
+.samples .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+.smp{background:var(--card);border:1px solid var(--hair);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color .25s,transform .25s}
+.smp:hover{border-color:var(--bengara);transform:translateY(-3px)}
+.smp .shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-deep);border-bottom:1px solid var(--hair)}
+.smp .shot img{width:100%;height:auto;display:block;object-fit:cover;object-position:top}
+.smp .b{padding:14px 16px 16px}
+.smp .ind{font-family:var(--numfont);font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--bengara-deep)}
+.smp h3{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin-top:2px}
+.smp p{font-size:.84rem;color:var(--ink-soft);margin-top:6px}
+.samples .note{font-size:.8rem;color:var(--ink-soft);margin-top:14px}
+
+/* accordion */
+.body{padding:24px 0 64px}
+.acc-tools{display:flex;justify-content:flex-end;gap:14px;margin-bottom:10px}
+.acc-tools button{background:none;border:1px solid var(--hair);padding:6px 14px;border-radius:2px;font-size:.78rem;letter-spacing:.08em;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+details{border-top:1px solid var(--hair)}
+details:last-of-type{border-bottom:1px solid var(--hair)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;gap:14px;padding:26px 0}
+summary::-webkit-details-marker{display:none}
+summary .idx{font-family:var(--numfont);font-weight:800;font-size:1rem;letter-spacing:.14em;color:var(--bengara-deep)}
+summary h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.03em;line-height:1.4}
+summary .hint{font-size:.86rem;color:var(--ink-soft);margin-top:4px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400}
+summary .pm{width:40px;height:40px;border:1px solid var(--hair);border-radius:50%;position:relative;transition:transform .3s,border-color .3s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+details[open] summary .pm{border-color:var(--bengara);transform:rotate(180deg)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.panel{padding:0 0 34px 78px;max-width:62em}
+.panel p{margin:10px 0}
+.panel p.soft{color:var(--ink-soft);font-size:.92rem}
+.panel h4{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin:22px 0 8px}
+.tblwrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:11px 12px;border-top:1px solid var(--hair);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:.84rem}
+tr:last-child td{border-bottom:1px solid var(--hair)}
+.checks{list-style:none;margin:12px 0}
+.checks li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--hair);align-items:flex-start}
+.checks li svg{color:var(--bengara);margin-top:.28em}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.flow .f{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:14px 14px 12px;font-size:.86rem}
+.flow .f .n{font-family:var(--numfont);font-weight:800;font-size:1.5rem;color:var(--bengara-deep);line-height:1}
+.flow .f b{display:block;margin:6px 0 2px;font-family:"Shippori Mincho",serif;font-size:.98rem}
+.flow .f span{color:var(--ink-soft);font-size:.8rem}
+.qs{columns:2;column-gap:28px;font-size:.92rem;margin:12px 0}
+.qs li{break-inside:avoid;padding:5px 0 5px 0;list-style:none;display:flex;gap:10px}
+.qs li b{font-family:var(--numfont);font-weight:800;color:var(--bengara-deep);min-width:1.6em}
+
+/* contact */
+.contact{padding:64px 0 72px;border-top:1px solid var(--hair)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
+.contact h2{font-family:"Shippori Mincho",serif;font-size:1.7rem;line-height:1.4;letter-spacing:.03em}
+.contact p{color:var(--ink-soft);margin-top:14px}
+.form{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px}
+.form label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;margin:14px 0 6px}
+.form label:first-child{margin-top:0}
+.form input,.form textarea,.form select{width:100%;font:inherit;font-size:.95rem;padding:11px 12px;border:1px solid var(--hair);border-radius:2px;background:#fff;color:var(--ink)}
+.form textarea{min-height:96px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{outline:2px solid var(--bengara);outline-offset:1px;border-color:transparent}
+.form .submit{margin-top:20px;width:100%;justify-content:center;cursor:pointer;font:inherit;font-weight:700;letter-spacing:.1em;font-size:1rem}
+.form .alt{font-size:.8rem;color:var(--ink-soft);margin-top:12px;text-align:center}
+.form .alt a{color:var(--bengara)}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#21232b;background:color-mix(in srgb,var(--ink) 94%,transparent);color:var(--paper);backdrop-filter:blur(6px)}
+.sticky .in{max-width:var(--measure);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sticky .t{font-size:.9rem}
+.sticky .t b{font-family:"Shippori Mincho",serif}
+.sticky .btn{padding:11px 20px;font-size:.9rem;border-color:var(--paper);color:var(--paper);background:transparent}
+.sticky .btn:hover{background:var(--paper);color:var(--ink)}
+footer{padding:34px 0 40px;border-top:1px solid var(--hair);font-size:.8rem;color:var(--ink-soft)}
+footer .fin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink-soft)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.on{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .hero{padding:56px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .bub{max-width:100%}
+  .facts{grid-template-columns:1fr;gap:18px;padding:22px 0}
+  .fact{border-left:none;padding:0}
+  .ladder{grid-template-columns:1fr}
+  .step.main{transform:none}
+  .samples .grid{grid-template-columns:1fr}
+  summary{grid-template-columns:44px 1fr 36px;padding:20px 0}
+  .panel{padding-left:0}
+  .flow{grid-template-columns:1fr 1fr}
+  .qs{columns:1}
+  .contact-grid{grid-template-columns:1fr}
+  .sticky .t{display:none}
+  .sticky .in{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logotype" href="https://kalayaan.jp">KALAYAAN<small>マーケティング／AI活用支援</small></a>
+    <a class="hbtn" href="#contact">無料相談</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">はじめてのホームページ</div>
+      <h1>10 の質問に<br>答えるだけ。<br><span class="stress">1 週間後</span>には、<br>自分のページがある。</h1>
+      <p class="lead">まだホームページを持っていない小さな会社・お店・教室のために。LINE かメールで 10 の質問に答えていただくと、AI が文章と構成を下書きした<b>サンプルページが無料で届きます</b>。気に入ったら 3 万円で正規版に。あなたの作業は「見て、直して、OK を出す」だけ。公開後の更新も任せられます。</p>
+      <div class="cta-row">
+        <a class="btn btn--main" href="#contact">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          無料相談を申し込む
+        </a>
+        <a class="btn btn--ghost" href="#price">料金を見る</a>
+      </div>
+      <div class="cta-note">相談もサンプルページも無料・営業電話はしません。「うちに必要か」から一緒に考え、要らないと分かれば、そう言います。</div>
+    </div>
+    <div class="device">
+      <div class="bub you"><div class="who">DAY 1 ─ あなた</div><div class="t">「御影の眼鏡店です。鯖江のフレームが得意で、遠近両用の相談が多い。店の写真は 5 枚あります」</div><div class="day">LINE で 10 問に答える（15 分）</div></div>
+      <div class="bub ai"><div class="who">DAY 3 ─ AI ＋ 私たち（無料）</div><div class="t">回答からトップページのサンプルを下書き。写真を配置して、プレビューの URL をお送りします。ここまで無料。</div></div>
+      <div class="bub you"><div class="who">DAY 5 ─ あなた</div><div class="t">「これで進めたい。営業時間だけ直して、レンズのページも足して」</div><div class="day">正規版へ（3 万円＋ページ追加 1 万円）</div></div>
+      <div class="bub ai"><div class="who">DAY 7 ─ 公開</div><div class="big">yourpage.jp</div><div class="t">公開。Google マップ（ビジネスプロフィール）にも URL を登録。独自ドメインは実費でお客様名義に。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="facts">
+    <div class="fact rv"><div class="v num"><b>51.8%</b></div><div class="k">中小企業の半数以上が、まだホームページを持っていない</div><div class="s">Wepage 調査 2025年（中小企業経営者 n=3,000）※1</div></div>
+    <div class="fact rv"><div class="v num"><b>3割台</b></div><div class="k">従業員 5 人以下の会社では、持っている方が少数</div><div class="s">同調査 ※1</div></div>
+    <div class="fact rv"><div class="v num"><b>7日</b></div><div class="k">質問に答えてから公開までの標準日数</div><div class="s">当社の標準工程（写真とドメインが揃っている場合）</div></div>
+  </div>
+</section>
+
+<section class="offer wrap" id="price">
+  <div class="sec-h"><span class="en">PRICING</span><h2>料金は3段。入口は無料です。</h2></div>
+  <div class="ladder">
+    <div class="step rv">
+      <div class="no">STEP 01</div>
+      <h3>無料相談＋サンプルページ</h3>
+      <div class="price num"><b>0</b><small>円</small></div>
+      <div class="tax">相談 30 分＋サンプル 1 ページ（3 日）</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ホームページが要るか、要らないかから一緒に考える</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>10 の質問に答えると、AI が下書きしたトップページのサンプルが届く</b></span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>Google マップ・LINE・Instagram との役割分担</li>
+      </ul>
+      <div class="foot">サンプルを見て、進めるかどうか決めてください。ここで終わっても費用はかかりません。</div>
+    </div>
+    <div class="step main rv">
+      <div class="no">STEP 02</div>
+      <h3>制作・公開（サンプルの正規版）</h3>
+      <div class="price num"><b>3</b><small>万円（税込）</small></div>
+      <div class="tax">トップ 1 ページ・標準 7 日で公開</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>サンプルの文章・写真・構成を仕上げて正規版に（赤字 2 往復まで）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>ページ追加は 1 ページ＋1 万円</b>（サービス／商品・料金・店舗案内・お知らせ など）</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>スマホ対応・お問い合わせ導線（電話・LINE・メール）・地図</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>公開設定・Google ビジネスプロフィールへの URL 登録</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>検索エンジンと AI が読める形の情報整理（構造化データ）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>AI 更新の接続と、承認フローの設定</li>
+      </ul>
+      <div class="foot">独自ドメインを取得する場合は実費（年 1,000〜5,000 円程度・お客様名義）。写真がない場合は撮り方のガイドをお渡しします。</div>
+    </div>
+    <div class="step rv">
+      <div class="no">STEP 03</div>
+      <h3>AI 更新運用（月額）</h3>
+      <div class="price num"><b>1</b><small>万円／月（税込）</small></div>
+      <div class="tax">最低契約期間なし・月単位で解約可</div>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>更新代行 月 4 本まで（お知らせ・メニュー・営業時間など。内容をお送りいただければ反映します）</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>依頼は LINE / メール の一言で</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ホスティング・監視・バックアップ込み</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>不具合対応・仕組み側の更新追従</li>
+      </ul>
+      <div class="foot">公開後のページ追加も 1 ページ 1 万円（税込）。月 1 回のレポートが必要な方は 2.5 万円／月のプラン。</div>
+    </div>
+  </div>
+  <p class="offer-note">例：トップ＋4 ページ（3 万円＋1 万円×4＝7 万円）で作り、3 年運用（1 万円×36 ヶ月）した総額は <b>43 万円（税込）</b>。トップ 1 ページなら 3 年で 39 万円。独自ドメインの取得・年間費用（1,000〜5,000 円程度）は実費・お客様名義です。表示価格はすべて税込です。すでにホームページをお持ちで、更新が止まっている方は <a href="../">「乗り換え」のご案内</a> をご覧ください。</p>
+</section>
+
+<section class="samples wrap" id="samples">
+  <div class="sec-h"><span class="en">SAMPLES</span><h2>こんなページになります。</h2></div>
+  <div class="grid">
+    <a class="smp" href="../samples/clinic.html" target="_blank" rel="noopener"><div class="shot"><img src="../samples/thumb-clinic.png" alt="歯科クリニックのサンプルトップページ" loading="lazy" width="720" height="788"></div><div class="b"><div class="ind">CLINIC</div><h3>歯科クリニック</h3><p>診療時間・休診日・診療案内・医師紹介・FAQ。</p></div></a>
+    <a class="smp" href="../samples/optician.html" target="_blank" rel="noopener"><div class="shot"><img src="../samples/thumb-optician.png" alt="眼鏡店のサンプルトップページ" loading="lazy" width="720" height="788"></div><div class="b"><div class="ind">SHOP</div><h3>眼鏡店</h3><p>おすすめ商品・レンズの選び方・修理・店舗案内。</p></div></a>
+    <a class="smp" href="../samples/school.html" target="_blank" rel="noopener"><div class="shot"><img src="../samples/thumb-school.png" alt="学習塾のサンプルトップページ" loading="lazy" width="720" height="788"></div><div class="b"><div class="ind">SCHOOL</div><h3>学習塾</h3><p>コースと料金・空き席・日程・保護者の声。</p></div></a>
+  </div>
+  <p class="note">3 つとも架空の事業者で、写真は仮置きです。実際はあなたの店の写真・ロゴ・色で作ります。ページ内の数値・価格はすべて架空です。</p>
+</section>
+
+<section class="body wrap">
+  <div class="acc-tools"><button type="button" id="openAll">すべて開く</button><button type="button" id="closeAll">すべて閉じる</button></div>
+
+  <details open>
+    <summary><span class="idx">01</span><div><h3>こんな方に向いています</h3><div class="hint">「ちゃんとしたのは、いつか」で止まっている方へ</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>お店・教室・事務所を開いたが、ホームページはまだ</b>。Instagram か Google マップだけで回している。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>制作会社の見積り（数十万〜）を見て止まった</b>。そこまでの規模は要らないが、名刺代わりは欲しい。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>無料のホームページ作成ツールを開いたが、文章が書けずに止まった</b>。何を載せればいいか分からない。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>「ホームページはありますか」と聞かれることが増えた</b>。取引先・求人・補助金の申請で URL を求められる。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span><b>作った後に、自分で更新し続ける自信がない</b>。だから作っていない。</span></li>
+      </ul>
+      <p class="soft">最後の 1 つが一番多い理由です。このサービスは「作る」より「作った後に止まらない」を先に設計しています。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">02</span><div><h3>10 の質問</h3><div class="hint">これに答えるだけで、下書きが出てきます</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <ol class="qs">
+        <li><b>1</b>店・会社の名前と、何をしているか（一言で）</li>
+        <li><b>2</b>誰に来てほしいか（年代・地域・困りごと）</li>
+        <li><b>3</b>選ばれている理由を 3 つ（お客さんに言われること）</li>
+        <li><b>4</b>メニュー・商品・サービスと、その価格</li>
+        <li><b>5</b>営業時間・定休日・所在地・駐車場</li>
+        <li><b>6</b>連絡してほしい手段（電話・LINE・メール・予約サイト）</li>
+        <li><b>7</b>代表者やスタッフの紹介（載せる／載せない）</li>
+        <li><b>8</b>よく聞かれる質問と、その答え（3 つ）</li>
+        <li><b>9</b>使える写真（枚数・店内／商品／人）とロゴの有無</li>
+        <li><b>10</b>好きな雰囲気・参考にしたいサイト（あれば）</li>
+      </ol>
+      <p class="soft">全部埋まらなくて大丈夫です。分からない所は相談の 30 分で一緒に埋めます。答えは LINE のメッセージでも、電話で話していただいて私たちが書き取っても構いません。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">03</span><div><h3>仕組み──AI が下書き、人が整え、あなたが公開を決める</h3><div class="hint">文章を書けなくても、進みます</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <p>10 の答えから、AI がページの構成と文章の下書きを作ります。私たちがそれを読み、事実の確認と言い回しの調整をして、写真を配置し、プレビューの URL をお送りします。公開は、あなたが OK を出してからです。</p>
+      <p>ページの土台には、AI から安全に編集できる新しい CMS（EmDash・Cloudflare が 2026 年に公開）を使います。「下書き」と「公開中のページ」が別に保存され、AI の接続は下書きまで。公開はプレビューを確認した人の操作で行います。だから公開後も、LINE で一言送れば、同じ流れで更新が続きます。</p>
+      <p class="soft">サーバーを借りる必要はありません。ホスティングは月額に含み、レンタルサーバーの契約・PHP の更新・バックアップ運用は発生しません。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">04</span><div><h3>公開までの流れ</h3><div class="hint">標準 7 日。サンプルまでは無料、お客様の作業は合計 1 時間ほど</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <div class="flow">
+        <div class="f"><div class="n">1</div><b>無料相談</b><span>30 分。要るか要らないか、ページ数、ドメイン名。</span></div>
+        <div class="f"><div class="n">2</div><b>10 の質問</b><span>LINE かメールで回答（15 分）。写真を送る。</span></div>
+        <div class="f"><div class="n">3</div><b>サンプル（無料）</b><span>3 日目にトップページのサンプルをプレビュー URL でお送りします。</span></div>
+        <div class="f"><div class="n">4</div><b>正規版へ</b><span>進めるなら 3 万円。赤字を LINE で（2 往復まで）。追加ページは 1 万円／ページ。</span></div>
+        <div class="f"><div class="n">5</div><b>公開</b><span>7 日目に公開。Google マップに URL を登録。独自ドメインは実費。</span></div>
+      </div>
+      <h4>お客様にお願いすること</h4>
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>10 の質問への回答と、写真（スマホで撮ったもので構いません）</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>独自ドメインを取る場合はその名前の決定（候補を 3 つお出しします。実費・お客様名義）</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg><span>プレビューの確認と、公開の OK</span></li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">05</span><div><h3>料金に含まれるもの・含まれないもの</h3><div class="hint">後から「別料金です」を言わないために、先に書きます</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <div class="tblwrap"><table>
+        <thead><tr><th style="width:30%">区分</th><th>含まれる</th><th>含まれない（別途）</th></tr></thead>
+        <tbody>
+          <tr><td>無料相談＋サンプルページ<br><span class="num">0</span>円</td><td>30 分の相談／10 の質問の回答から AI が下書きしたトップページのサンプル（写真は仮置き可）／プレビュー URL</td><td>公開／独自ドメイン</td></tr>
+          <tr><td>制作・公開（正規版）<br><span class="num">3</span>万円（税込）</td><td>サンプルを正規版に仕上げ（文章・写真の配置・構成）／スマホ対応／問い合わせ導線・地図／Google ビジネスプロフィールへの URL 登録／構造化データ／AI 接続と承認フロー／公開設定／赤字 2 往復まで</td><td>ページ追加（1 ページ 1 万円）／独自ドメインの取得・年間費用（実費・お客様名義）／写真撮影・ロゴ制作／予約システム・EC・会員機能／3 往復目以降の大きな作り直し</td></tr>
+          <tr><td>AI 更新運用 月額<br><span class="num">1</span>万円（税込）</td><td>更新代行 月 4 本まで（内容をお送りいただいた分を反映。使わない月があっても構いません）／ホスティング・監視・バックアップ／不具合対応／仕組み側の更新追従</td><td>月 5 本目以降の更新（1 本 5,000 円）／月次レポート（下記プラン）／広告運用・SNS 運用</td></tr>
+          <tr><td>レポート付き運用 月額<br><span class="num">2.5</span>万円（税込）</td><td>上記すべて＋月 1 回のレポート（閲覧数・問い合わせ・Google マップと AI 検索での見え方・次の一手）</td><td>同上</td></tr>
+          <tr><td>ページ追加<br><span class="num">1</span>万円／ページ（税込）</td><td>サービス・料金・店舗案内・求人・キャンペーンなどの 1 ページ。構成・文章まで（制作時も公開後も同額）</td><td>広告費そのもの</td></tr>
+        </tbody>
+      </table></div>
+      <p class="soft">独自ドメインは無くても当社管理のアドレスで公開できます。取得する場合は実費（年 1,000〜5,000 円程度）でお客様名義。解約時はコンテンツ一式とドメイン設定を引き渡します。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">06</span><div><h3>よくある質問</h3><div class="hint">写真がない・文章が書けない・無料ツールと何が違う</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <h4>サンプルページは本当に無料ですか</h4>
+      <p>無料です。10 の質問への回答から、AI が下書きしたトップページを 1 枚お作りし、プレビューの URL でお送りします。「こういうものができるのか」を見てから決めていただくためのものなので、気に入らなければそのまま終わって構いません。</p>
+      <h4>独自ドメインは必要ですか</h4>
+      <p>無くても公開できます（当社管理のアドレスになります）。名刺や看板に載せるなら独自ドメインをおすすめします。取得は実費（年 1,000〜5,000 円程度）で、お客様名義で取り、当社が設定します。</p>
+      <h4>写真がありません</h4>
+      <p>スマホで撮った 5 枚で始められます。「外観・店内・商品や施術・あなた・こだわりの一枚」の撮り方ガイドをお渡しします。どうしても無い場合は、写真なしでも成立する構成で作り、後から差し替えます。</p>
+      <h4>文章がまったく書けません</h4>
+      <p>書かなくて大丈夫です。10 の質問に話し言葉で答えていただければ、AI が下書きし、私たちが整えます。「自分の言葉じゃない」と感じた所を赤字で直してもらう方が、白紙から書くより速く、良いものになります。</p>
+      <h4>無料のホームページ作成ツールと何が違いますか</h4>
+      <p>道具ではなく「文章と構成」と「公開後の更新」を提供します。ツールで止まる方の多くは操作ではなく、何を書くかで止まっています。無料ツールで十分な方には、相談の時にそうお伝えします。</p>
+      <h4>Google マップ（ビジネスプロフィール）だけでよくないですか</h4>
+      <p>店舗の来客はマップの影響が大きいので、まずそちらを整えるべき方もいます。無料相談ではその判定を先にします。ホームページが効くのは「マップから飛んだ人に、料金・メニュー・人柄まで見せて安心させる」場面です。</p>
+      <h4>公開後に自分でも直せますか</h4>
+      <p>直せます。管理画面があり、パスキー（指紋・顔認証）でログインします。ただ多くの方は、LINE で一言送る方が早いと言われます。両方使えます。</p>
+      <h4>途中でやめたらどうなりますか</h4>
+      <p>月額運用に契約期間の縛りはありません。解約時はコンテンツ一式（文章・画像）とドメインの設定をお渡しするので、別の会社や無料ツールに移れます。</p>
+      <h4>土台に使う CMS が新しいと聞きました。大丈夫ですか</h4>
+      <p>EmDash は 2026 年 4 月に公開されたばかりで、開発元も「ベータ版」としています。公開されている本番導入事例は、いまのところ Cloudflare 自身のブログ以外に確認できていません。私たちは自社が関与するサイトで 2026 年 7 月から動かした上で採用しており、仕組み側の更新への追従は月額に含めています。万一開発が止まっても、コンテンツは標準的な形式で手元に残ります。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="idx">07</span><div><h3>向いていない方</h3><div class="hint">お互いの時間を無駄にしないために</div></div><span class="pm"></span></summary>
+    <div class="panel">
+      <ul class="checks">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>ネットショップ・予約システム・会員機能が主役</b>の方。専用サービスの方が向いています（外部サービスへのリンクは対応します）。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>ブランドサイトとして、写真やデザインに強くこだわりたい</b>方。制作会社にご相談ください。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>ホームページだけで集客を賄いたい</b>方。来客は Google マップと広告で決まる部分が大きく、ページ 1 本では動きません。その場合は広告や地図の運用を先にご提案します。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>すでにホームページがあり、更新が止まっている</b>方。そちらは <a href="../">乗り換えのご案内</a> へ。</span></li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker">FREE CONSULTATION</div>
+      <h2>まず、サンプルページを<br>無料でお作りします。</h2>
+      <p>お名前と連絡先、店や会社の一言説明だけで始められます。無料相談で「ホームページが要るか」「Google マップとどう分担するか」を決め、進めるなら 10 の質問をお渡しし、3 日でトップページのサンプルをお送りします。サンプルまでは費用が一切かかりません。</p>
+      <p class="soft" style="font-size:.86rem">送信ボタンを押すと、入力内容を本文にしたメール作成画面が開きます。そのまま送信してください（サーバーにデータを保存しない方式のため）。</p>
+    </div>
+    <form class="form" id="diagForm">
+      <label for="f_company">会社名・店名 <span style="color:var(--bengara)">*</span></label>
+      <input id="f_company" name="company" type="text" required>
+      <label for="f_biz">何をしているお店・会社ですか（一言で） <span style="color:var(--bengara)">*</span></label>
+      <input id="f_biz" name="biz" type="text" placeholder="例：御影の眼鏡店。鯖江のフレームが得意" required>
+      <label for="f_name">お名前 <span style="color:var(--bengara)">*</span></label>
+      <input id="f_name" name="name" type="text" required>
+      <label for="f_mail">ご連絡先メール <span style="color:var(--bengara)">*</span></label>
+      <input id="f_mail" name="mail" type="email" required>
+      <label for="f_pain">いま困っていること・聞きたいこと（任意）</label>
+      <textarea id="f_pain" name="pain" placeholder="例：Instagram だけでやってきたが、求人で URL を聞かれる"></textarea>
+      <button class="btn btn--main submit" type="submit"><svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>無料相談を申し込む</button>
+      <div class="alt">メールで直接：<a id="mailDirect" href="#">こちら</a></div>
+      <div class="alt" id="mailFallback" hidden>メール作成画面が開かない場合は、<a id="mailDirect2" href="#">この宛先</a>に店名とご連絡先をお送りください。</div>
+      <div class="alt" style="text-align:left;margin-top:14px">ご入力いただいた情報は無料相談のご連絡にのみ使用し、第三者に提供しません（<a href="../privacy.html">個人情報の取扱い</a>）。</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fin">
+    <div>運営：KALAYAAN（個人事業／マーケティング・AI活用支援）　<a href="../company.html">事業者情報</a>　<a href="../privacy.html">個人情報の取扱い</a>　<a href="../">乗り換えのご案内</a>　<a href="https://kalayaan.jp">kalayaan.jp</a></div>
+    <div style="max-width:60em">※1 Wepage「中小企業のホームページに関する自主調査」2025年、中小企業法人経営者 n=3,000（HP 導入率 48.2%。従業員 5 人以下では 3 割台）。掲載の日数は当社の標準工程で、写真とドメイン名が揃っている場合の目安です。</div>
+  </div>
+</footer>
+
+<div class="sticky"><div class="in">
+  <div class="t"><b>無料相談</b>　10 の質問に答えると、サンプルページが無料で届きます</div>
+  <a class="btn" href="#contact">サンプルページを申し込む</a>
+</div></div>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  var CONTACT_TO = "info@kalayaan.jp";
+  var SUBJECT = "【無料相談】はじめてのホームページ";
+  function buildMail(f){
+    var body=["はじめてのホームページ 無料相談の申し込みです。","","会社名・店名: "+(f.company||""),"何をしているか: "+(f.biz||""),"お名前: "+(f.name||""),"ご連絡先メール: "+(f.mail||""),"困っていること・聞きたいこと: "+(f.pain||""),"","（このメールは LP のフォームから作成されました）"].join("\n");
+    return "mailto:"+CONTACT_TO+"?subject="+encodeURIComponent(SUBJECT)+"&body="+encodeURIComponent(body);
+  }
+  var form=document.getElementById("diagForm");
+  form.addEventListener("submit",function(e){e.preventDefault();var f={};["company","biz","name","mail","pain"].forEach(function(k){f[k]=form.elements[k].value.trim();});window.location.href=buildMail(f);document.getElementById("mailFallback").hidden=false;});
+  var direct="mailto:"+CONTACT_TO+"?subject="+encodeURIComponent(SUBJECT);
+  document.getElementById("mailDirect").href=direct;
+  var d2=document.getElementById("mailDirect2");d2.href=direct;d2.textContent=CONTACT_TO;
+  var ds=Array.prototype.slice.call(document.querySelectorAll("details"));
+  document.getElementById("openAll").onclick=function(){ds.forEach(function(d){d.open=true;});};
+  document.getElementById("closeAll").onclick=function(){ds.forEach(function(d){d.open=false;});};
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("on");io.unobserve(en.target);}});},{threshold:.15});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
