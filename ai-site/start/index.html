@@ -215,6 +215,12 @@ html{overflow-x:clip}
 .line-box .btn{width:100%;justify-content:center}
 .form-lead{font-size:.82rem;color:var(--ink-soft);margin:0 0 10px}
 .sticky .btn.btn--line{background:#06C755;border-color:#06C755;color:#fff}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.thanks{border:2px solid #06C755;padding:22px 20px;background:var(--paper)}
+.thanks .tk{font-family:var(--numfont);font-weight:800;font-size:1.3rem;letter-spacing:.08em;color:var(--bengara-deep)}
+.thanks p{margin:10px 0;color:var(--ink)}
+.thanks .btn{width:100%;justify-content:center;margin:8px 0 4px}
+.thanks .small{font-size:.8rem;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -448,7 +454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="kicker">FREE CONSULTATION</div>
       <h2>まず、サンプルページを<br>無料でお作りします。</h2>
       <p>お名前と連絡先、店や会社の一言説明だけで始められます。10 の質問にお答えいただくと、3 営業日でトップページのサンプルをお送りします。「要るかどうか」から話したい方は、相談（30 分・オンライン）もできます。サンプルまでは費用が一切かかりません。</p>
-      <p class="soft" style="font-size:.86rem">送信ボタンを押すと、入力内容を本文にしたメール作成画面が開きます。そのまま送信してください（サーバーにデータを保存しない方式のため）。</p>
+      <p class="soft" style="font-size:.86rem">フォームから送ると、その場で受付番号が表示され、info@kalayaan.jp からご連絡します。</p>
     </div>
     <div>
     <div class="line-box">
@@ -457,6 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="form-lead">メールで申し込む場合</p>
     <form class="form" id="diagForm">
+      <div class="hp" aria-hidden="true"><label>この欄は空のままにしてください<input name="hp" tabindex="-1" autocomplete="off"></label></div>
       <label for="f_company">会社名・店名 <span style="color:var(--bengara)">*</span></label>
       <input id="f_company" name="company" type="text" required>
       <label for="f_biz">何をしているお店・会社ですか（一言で） <span style="color:var(--bengara)">*</span></label>
@@ -502,13 +509,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var SUBJECT = "【無料相談】はじめてのホームページ";
   function pushLead(method){ try{ (window.dataLayer=window.dataLayer||[]).push({event:"lead_submit",lead_type:"start",lead_method:method}); }catch(e){} }
   Array.prototype.forEach.call(document.querySelectorAll("a[data-line]"),function(a){ a.addEventListener("click",function(){ pushLead("line_click"); }); });
+  var DESK_URL = "https://kalayaan-desk.ray-demo-hub.workers.dev/api/inquiry";
+  function utmObj(){ try{ var q=new URLSearchParams(location.search); var o={}; ["utm_source","utm_medium","utm_campaign","utm_content","fbclid"].forEach(function(k){ var v=q.get(k); if(v){ o[k.replace("utm_","")]=v; } }); return o; }catch(e){ return {}; } }
+  function esc(t){ return String(t==null?"":t).replace(/[&<>"]/g,function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function showThanks(form,d){
+    var box=document.createElement("div"); box.className="thanks";
+    box.innerHTML='<div class="tk">受付番号 '+esc(d.ticket_no)+'</div>'
+      +'<p>受け付けました。info@kalayaan.jp からご連絡します。</p>'
+      +'<p><b>LINE で続けていただくのがいちばん早く進みます。</b>写真もそのまま送れて、サンプルができた時もトークでお知らせが届きます。やり取りは LINE だけで完結します。</p>'
+      +'<a class="btn btn--line" href="'+esc(d.line_open_url)+'">LINE で続ける</a>'
+      +'<p class="small">パソコンの方は、スマホの LINE で「@421djvkn」を友だち追加して、受付コード <b>'+esc(d.link_code)+'</b> を送ってください。</p>';
+    form.parentNode.replaceChild(box,form);
+    var a=box.querySelector("a.btn--line"); if(a){ a.addEventListener("click",function(){ pushLead("line_click"); }); }
+  }
+  function sendDesk(form,payload,fallback){
+    var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; }
+    var ctl=("AbortController" in window)?new AbortController():null;
+    var tm=setTimeout(function(){ if(ctl){ ctl.abort(); } },8000);
+    function fail(){ clearTimeout(tm); if(btn){ btn.disabled=false; } fallback(); }
+    if(!("fetch" in window)){ fail(); return; }
+    payload.utm=utmObj(); payload.hp=(form.elements.hp&&form.elements.hp.value)||"";
+    fetch(DESK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload),signal:ctl?ctl.signal:undefined})
+      .then(function(res){ clearTimeout(tm); if(!res.ok){ throw new Error("http "+res.status); } return res.json(); })
+      .then(function(d){ if(!d||!d.ticket_no){ throw new Error("bad"); } pushLead("form"); showThanks(form,d); })
+      .catch(fail);
+  }
   function route(){ try{ var q=new URLSearchParams(location.search); var src=q.get("utm_source")||"direct"; var c=q.get("utm_campaign")||""; var ct=q.get("utm_content")||""; return [src,c,ct].filter(Boolean).join(" / "); }catch(e){ return "direct"; } }
   function buildMail(f){
     var body=["はじめてのホームページ 無料相談の申し込みです。","","会社名・店名: "+(f.company||""),"何をしているか: "+(f.biz||""),"お名前: "+(f.name||""),"ご連絡先メール: "+(f.mail||""),"困っていること・聞きたいこと: "+(f.pain||""),"","経路: "+route(),"（このメールは LP のフォームから作成されました）"].join("\n");
     return "mailto:"+CONTACT_TO+"?subject="+encodeURIComponent(SUBJECT)+"&body="+encodeURIComponent(body);
   }
   var form=document.getElementById("diagForm");
-  form.addEventListener("submit",function(e){e.preventDefault();var f={};["company","biz","name","mail","pain"].forEach(function(k){f[k]=form.elements[k].value.trim();});pushLead("mail_form");window.location.href=buildMail(f);document.getElementById("mailFallback").hidden=false;});
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var f={};["company","biz","name","mail","pain"].forEach(function(k){f[k]=form.elements[k].value.trim();});
+    sendDesk(form,{page:"start",company:f.company,biz:f.biz,name:f.name,mail:f.mail,pain:f.pain},function(){ pushLead("mail_form"); window.location.href=buildMail(f); document.getElementById("mailFallback").hidden=false; });
+  });
   var direct="mailto:"+CONTACT_TO+"?subject="+encodeURIComponent(SUBJECT);
   document.getElementById("mailDirect").href=direct;
   var d2=document.getElementById("mailDirect2");d2.href=direct;d2.textContent=CONTACT_TO;
