@@ -231,6 +231,14 @@ html{overflow-x:clip}
   .smp .shot{aspect-ratio:1/1}
   .smp .shot picture img{width:62%;margin:18px auto 0;border:1px solid var(--hair);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
 }
+.btn--line{background:#06C755;border-color:#06C755;color:#fff}
+.btn--line:hover{background:#04a648;border-color:#04a648}
+.cta-note a{color:var(--bengara)}
+.line-box{border:1px solid var(--hair);padding:18px 18px 16px;margin-bottom:22px;background:var(--paper)}
+.line-box p{margin:0 0 12px;font-size:.9rem;color:var(--ink)}
+.line-box .btn{width:100%;justify-content:center}
+.form-lead{font-size:.82rem;color:var(--ink-soft);margin:0 0 10px}
+.sticky .btn.btn--line{background:#06C755;border-color:#06C755;color:#fff}
 </style>
 </head>
 <body>
@@ -242,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
   <div class="wrap header-in">
     <a class="logotype" href="https://kalayaan.jp">KALAYAAN<small>マーケティング／AI活用支援</small></a>
-    <a class="hbtn" href="#contact">無料診断</a>
+    <a class="hbtn" href="https://line.me/R/ti/p/@421djvkn" data-line="1">LINE で無料診断</a>
   </div>
 </header>
 
@@ -254,13 +262,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>更新が止まった<br>ホームページを、<br><span class="stress">毎週動く</span><br>ホームページに。</h1>
       <p class="lead">「そろそろ作り直したい」の予算で、作り直しより先に運用を変えます。いまの WordPress の中身と見た目はそのまま引き継ぎ、変わるのは「誰が更新するか」。お知らせ・休業日・新商品・実績・よくある質問――言葉で伝えるだけで AI が下書きし、あなたが承認して公開する体制に切り替えます。</p>
       <div class="cta-row">
-        <a class="btn btn--main" href="#contact">
-          <svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-          無料診断を申し込む
+        <a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>
+          LINE で無料診断を申し込む
         </a>
         <a class="btn btn--ghost" href="#price">料金を見る</a>
       </div>
-      <div class="cta-note">診断は無料・営業電話はしません。現サイトのサイトマップ分析（全ページの棚卸し）と、移せるかどうかを1枚のレポートでお返しします。</div>
+      <div class="cta-note">電話も面談もなし。やり取りは LINE だけで完結します（営業電話もしません）。診断は無料で、現サイトのサイトマップ分析（全ページの棚卸し）と、移せるかどうかを1枚のレポートでお返しします。メールがよい方は<a href="#contact">フォーム</a>からどうぞ。</div>
     </div>
     <div class="device">
       <div class="slate old">
@@ -541,6 +549,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>私たちの運用では起きない設計にしています。この CMS では「下書き」と「公開中のページ」が別に保存され、下書きを更新しても公開ページは変わりません。AI の接続は下書きの作成・更新までに限定し、公開はプレビューを確認した人（あなた、または承認を受けた私たち）の操作で行います。</p>
       <h4>EmDash という CMS が無くなったらどうなりますか</h4>
       <p>EmDash はオープンソース（MIT ライセンス）で、コードは公開されています。開発元が手を引いても、動いているサイトが止まるわけではありません。加えて、ご要望に応じて全コンテンツを標準形式（JSON / 画像ファイル、本文は Markdown 変換）で書き出してお渡しします。別の CMS へ移る自由は常に手元に残ります。</p>
+      <h4>電話や面談は必要ですか</h4>
+      <p>いりません。無料診断・見本ページのご確認・お申し込み・移行中のご確認・公開後の更新のご依頼まで、やり取りは LINE だけで完結します。ドメインの切り替え日もトークで決めます。話しながら決めたい方だけ、オンライン相談もできます。</p>
       <h4>支払い方法は？</h4>
       <p>カードかお振込み（請求書）です。カードは Visa・Mastercard・JCB なら分割払い・ボーナス払いも使えます（回数と分割の手数料はお客様のカード会社の条件によります）。初期費用は一括のほか、着手時と公開前の 2 回に分けることもできます。月額はカードの自動払いか、請求書でのお振込みです。振込手数料はお客様のご負担でお願いします。</p>
       <h4>ドメインやサーバーの契約先が分かりません</h4>
@@ -581,6 +591,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>URL と連絡先だけで始められます。3 営業日以内に「サイトマップ分析（全ページの棚卸し）」「移せる／移せない」「乗り換え後の見本ページ」をお送りします。診断だけで終わっても、費用は一切かかりません。</p>
       <p class="soft" style="font-size:.86rem">送信ボタンを押すと、入力内容を本文にしたメール作成画面が開きます。そのまま送信してください（サーバーにデータを保存しない方式のため）。</p>
     </div>
+    <div>
+    <div class="line-box">
+      <p><b>LINE なら、友だち追加して URL を送るだけ。</b>診断結果と見本ページもトークで届きます。電話や面談はありません。</p>
+      <a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>LINE で無料診断を申し込む</a>
+    </div>
+    <p class="form-lead">メールで申し込む場合</p>
     <form class="form" id="diagForm">
       <label for="f_url">ホームページの URL <span style="color:var(--bengara)">*</span></label>
       <input id="f_url" name="url" type="url" placeholder="https://" required>
@@ -600,6 +616,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="alt" id="mailFallback" hidden>メール作成画面が開かない場合は、<a id="mailDirect2" href="#">この宛先</a>に URL とご連絡先をお送りください。</div>
       <div class="alt" style="text-align:left;margin-top:14px">ご入力いただいた情報は無料診断のご連絡にのみ使用し、第三者に提供しません（<a href="privacy.html">個人情報の取扱い</a>）。</div>
     </form>
+    </div>
   </div>
 </section>
 
@@ -613,8 +630,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="sticky">
   <div class="in">
-    <div class="t"><b>無料診断</b>　3営業日でサイトマップ分析と見本ページをお返しします</div>
-    <a class="btn" href="#contact">無料診断を申し込む</a>
+    <div class="t"><b>LINE で完結</b>　3営業日でサイトマップ分析と見本ページをお返しします</div>
+    <a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1">LINE で無料診断を申し込む</a>
   </div>
 </div>
 
@@ -632,6 +649,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var CONTACT_TO = "info@kalayaan.jp"; // 要確認: KALAYAAN の実在アドレスに合わせる
   var SUBJECT = "【無料診断】ホームページ乗り換えの申し込み";
   function pushLead(method){ try{ (window.dataLayer=window.dataLayer||[]).push({event:"lead_submit",lead_type:"switch",lead_method:method}); }catch(e){} }
+  Array.prototype.forEach.call(document.querySelectorAll("a[data-line]"),function(a){ a.addEventListener("click",function(){ pushLead("line_click"); }); });
 
   function route(){ try{ var q=new URLSearchParams(location.search); var src=q.get("utm_source")||"direct"; var c=q.get("utm_campaign")||""; var ct=q.get("utm_content")||""; return [src,c,ct].filter(Boolean).join(" / "); }catch(e){ return "direct"; } }
   function buildMail(fields){
