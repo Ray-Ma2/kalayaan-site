@@ -206,6 +206,24 @@ footer a{color:var(--ink-soft)}
   .sticky .t{display:none}
   .sticky .in{justify-content:center}
 }
+
+/* 2026-09-28 スマホ点検の修正 */
+.wrap.wrap{padding-left:24px;padding-right:24px}
+html{overflow-x:clip}
+.nw{white-space:nowrap}
+.hbtn{white-space:nowrap}
+.js .sticky{transform:translateY(110%);transition:transform .3s ease}
+.js .sticky.show{transform:none}
+@media (max-width:860px){
+  .wrap.wrap{padding-left:20px;padding-right:20px}
+  .logotype small{display:none}
+  .sticky .btn{background:var(--bengara);border-color:var(--bengara);color:#fff;width:100%;justify-content:center}
+  .sticky .in{padding:10px 20px}
+  .bub .who,.smp .ind,.slate .lab{font-size:.76rem}
+  .sec-h{flex-direction:column;gap:6px}
+  .smp .shot{aspect-ratio:1/1}
+  .smp .shot picture img{width:62%;margin:18px auto 0;border:1px solid var(--hair);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+}
 </style>
 </head>
 <body>
@@ -236,7 +254,7 @@ footer a{color:var(--ink-soft)}
     <div class="device">
       <div class="slate old">
         <div class="lab">BEFORE ─ いまのサイト</div>
-        <div class="big">最終更新 2024年8月</div>
+        <div class="big">最終更新 <span class="nw">2024年8月</span></div>
         <div class="sub">休業日のお知らせを1本書き換えて使い回し。商品ページは型番だけ。</div>
         <ul>
           <li>直したい所は制作会社に依頼、返事は翌週</li>
@@ -318,7 +336,7 @@ footer a{color:var(--ink-soft)}
         <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>更新代行 月 4 本まで（お知らせ・商品・FAQ 等。更新したい内容をお送りいただければ反映します）</li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>依頼は LINE / メール の一言で</li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>ホスティング・監視・バックアップ込み</li>
-        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>EmDash 本体の更新追従・不具合対応</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg>仕組み側の更新追従・不具合対応</li>
       </ul>
       <div class="foot">月 1 回のレポート（閲覧・AI 検索での見え方・次の一手）が必要な方は 3 万円／月のプラン。追加の専用ページ（広告用LP 等）は 1本 5 万円（税込）。</div>
     </div>
@@ -331,15 +349,15 @@ footer a{color:var(--ink-soft)}
   <div class="sec-h"><span class="en">SAMPLES</span><h2>こんなページになります。</h2></div>
   <div class="grid">
     <a class="smp" href="samples/clinic.html" target="_blank" rel="noopener">
-      <div class="shot"><img src="samples/thumb-clinic.png" alt="歯科クリニックのサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="shot"><picture><source media="(max-width:860px)" srcset="samples/thumb-clinic-sp.jpg"><img src="samples/thumb-clinic.png" alt="歯科クリニックのサンプルトップページ" loading="lazy" width="720" height="788"></picture></div>
       <div class="b"><div class="ind">CLINIC</div><h3>歯科クリニック</h3><p>AI が毎月更新するもの：<b>休診日・診療時間の変更・キャンペーン・症例の追加</b>。医療広告の表現は人が確認して公開。</p></div>
     </a>
     <a class="smp" href="samples/optician.html" target="_blank" rel="noopener">
-      <div class="shot"><img src="samples/thumb-optician.png" alt="眼鏡店のサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="shot"><picture><source media="(max-width:860px)" srcset="samples/thumb-optician-sp.jpg"><img src="samples/thumb-optician.png" alt="眼鏡店のサンプルトップページ" loading="lazy" width="720" height="788"></picture></div>
       <div class="b"><div class="ind">SHOP</div><h3>眼鏡店</h3><p>AI が毎週更新するもの：<b>今週のおすすめ・新作入荷・在庫と価格・定休日</b>。商品は一覧と詳細に同時反映。</p></div>
     </a>
     <a class="smp" href="samples/school.html" target="_blank" rel="noopener">
-      <div class="shot"><img src="samples/thumb-school.png" alt="学習塾のサンプルトップページ" loading="lazy" width="720" height="788"></div>
+      <div class="shot"><picture><source media="(max-width:860px)" srcset="samples/thumb-school-sp.jpg"><img src="samples/thumb-school.png" alt="学習塾のサンプルトップページ" loading="lazy" width="720" height="788"></picture></div>
       <div class="b"><div class="ind">SCHOOL</div><h3>学習塾</h3><p>AI が毎週更新するもの：<b>空き席数・授業カレンダー・講習の募集・合格実績</b>。季節で回る募集に追いつく。</p></div>
     </a>
   </div>
@@ -461,7 +479,7 @@ footer a{color:var(--ink-soft)}
               <td>5〜10 ページの移行／デザイン踏襲／商品・実績・FAQ のデータ化（〜100 件）／旧 URL 転送／計測タグ移植／構造化データ・llms.txt／AI 接続・承認フロー／ドメイン切替・公開立ち会い／<b>既存ページの内容修正</b>（古い情報の更新・文言の直し・不要ページの整理。見本ページ確認時のご指示分）</td>
               <td>11 ページ以降（1 ページ 1 万円）／新しいページ・新しい文章の書き起こし（専用ページ追加 5 万円／本、または月額運用の更新枠で順次）／EC・会員・予約などの機能開発／ロゴ・ブランド刷新／構成を大きく組み替えるリニューアル（別途お見積り）</td></tr>
           <tr><td>AI更新運用 月額<br><span class="num">1.5</span>万円（税込）</td>
-              <td>更新代行 月 4 本まで（更新内容をお送りいただいた分を反映。使わない月があっても構いません）／ホスティング・監視・バックアップ／不具合対応／EmDash 本体の更新追従</td>
+              <td>更新代行 月 4 本まで（更新内容をお送りいただいた分を反映。使わない月があっても構いません）／ホスティング・監視・バックアップ／不具合対応／仕組み側の更新追従</td>
               <td>月 5 本目以降の更新（1 本 5,000 円）／月次レポート（下記プラン）／広告運用・SNS 運用／写真撮影・取材</td></tr>
           <tr><td>レポート付き運用 月額<br><span class="num">3</span>万円（税込）</td>
               <td>上記すべて＋月 1 回のレポート（閲覧数・問い合わせ・AI 検索での見え方・次の一手の提案）</td>
@@ -531,7 +549,7 @@ footer a{color:var(--ink-soft)}
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>EC（ネットショップ）や会員制サイトが主役</b>の方。決済・在庫・会員管理は専用サービスの方が向いています。</span></li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>社内に Web 担当がいて、毎週自分たちで更新できている</b>方。いまの体制で十分です。</span></li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>WordPress の特定プラグインに業務が深く依存している</b>方（予約・LMS・多言語の複雑構成など）。診断で「移さない方がいい」とお伝えすることがあります。</span></li>
-        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>まだホームページを持っていない</b>方。乗り換えるものが無いので、<a href="start/">「はじめてのホームページ」</a>（サンプル無料・正規版 3 万円・月 1 万円）をご覧ください。</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>まだホームページを持っていない</b>方。乗り換えるものが無いので、<a href="start/">「はじめてのホームページ」</a>（サンプル無料・正規版 3 万円・月 1.5 万円）をご覧ください。</span></li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b>ホームページで集客の大半を賄いたい</b>方。店舗の来客は Google ビジネスプロフィールと広告の影響が大きく、CMS を替えるだけで来客は動きません。その場合は広告運用や地図対策を先にご提案します。</span></li>
       </ul>
     </div>
@@ -586,6 +604,13 @@ footer a{color:var(--ink-soft)}
 
 <script>
 (function(){
+  // 2026-09-28 下の固定バーは、最初の申込ボタンが画面から消えてから出す
+  (function(){
+    var bar=document.querySelector(".sticky"), cta=document.querySelector(".cta-row");
+    if(!bar) return;
+    if(!cta || !("IntersectionObserver" in window)){bar.classList.add("show");return;}
+    new IntersectionObserver(function(es){es.forEach(function(en){bar.classList.toggle("show",!en.isIntersecting);});}).observe(cta);
+  })();
   document.documentElement.classList.add("js");
   // ---- 連絡先（ここだけ変えれば全CTAに反映） ----
   var CONTACT_TO = "info@kalayaan.jp"; // 要確認: KALAYAAN の実在アドレスに合わせる
