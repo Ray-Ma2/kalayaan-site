@@ -663,8 +663,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function showThanks(form,d){
     var box=document.createElement("div"); box.className="thanks";
     box.innerHTML='<div class="tk">受付番号 '+esc(d.ticket_no)+'</div>'
-      +'<p>受け付けました。3 営業日以内に、診断結果と見本ページをお送りします。</p>'
-      +'<p><b>LINE で続けていただくと、結果もトークで届きます。</b>その後のやり取りも LINE だけで完結します。</p>'
+      +'<p>お申し込みありがとうございます。受付の確認メール（自動）をお送りします。診断結果と見本ページは、3 営業日以内にお送りします。</p>'
+      +'<p><b>LINE でのやり取りをご希望の方は、下のボタンから続けられます。</b>診断結果もトークで届き、その後のやり取りも LINE だけで完結します。</p>'
       +'<a class="btn btn--line" href="'+esc(d.line_open_url)+'">LINE で続ける</a>'
       +'<p class="small">パソコンの方は、スマホの LINE で「@421djvkn」を友だち追加して、受付コード <b>'+esc(d.link_code)+'</b> を送ってください。</p>';
     form.parentNode.replaceChild(box,form);

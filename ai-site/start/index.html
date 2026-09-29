@@ -515,8 +515,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function showThanks(form,d){
     var box=document.createElement("div"); box.className="thanks";
     box.innerHTML='<div class="tk">受付番号 '+esc(d.ticket_no)+'</div>'
-      +'<p>受け付けました。info@kalayaan.jp からご連絡します。</p>'
-      +'<p><b>LINE で続けていただくのがいちばん早く進みます。</b>写真もそのまま送れて、サンプルができた時もトークでお知らせが届きます。やり取りは LINE だけで完結します。</p>'
+      +'<p>お問い合わせありがとうございます。info@kalayaan.jp から、受付の確認メール（自動）をお送りします。</p>'
+      +'<p><b>LINE でのやり取りをご希望の方は、下のボタンから続けられます。</b>写真をそのまま送れて、サンプルができたときもトークでお知らせが届きます。やり取りは LINE だけで完結します。</p>'
       +'<a class="btn btn--line" href="'+esc(d.line_open_url)+'">LINE で続ける</a>'
       +'<p class="small">パソコンの方は、スマホの LINE で「@421djvkn」を友だち追加して、受付コード <b>'+esc(d.link_code)+'</b> を送ってください。</p>';
     form.parentNode.replaceChild(box,form);
