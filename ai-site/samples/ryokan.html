@@ -50,6 +50,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <aside class="contact" data-contact-bar aria-label="予約・お問い合わせ"><a href="#reservation">空室確認・ご予約</a><a href="tel:00000000000">電話で予約</a></aside>
 <footer><div class="wrap">凪乃屋<p>このページは KALAYAAN「AI更新ホームページ」の制作見本です。</p><a href="../">KALAYAAN「AI更新ホームページ」へ</a></div></footer>
 <script>
+// 乗り換えの案内ページから開いた人には、帯を乗り換えの案内に替える（はじめての案内からは今のまま）
+(function () {
+  var cta = document.querySelector('[data-kalayaan-cta]');
+  if (!cta) return;
+  var from = new URLSearchParams(location.search).get('from');
+  try {
+    if (from) sessionStorage.setItem('kalayaan-from', from);
+    else from = sessionStorage.getItem('kalayaan-from');
+  } catch (e) {}
+  if (from === 'switch') {
+    cta.href = '../';
+    cta.textContent = 'こんなサイトに乗り換える（無料診断）';
+  }
+})();
 // A local preview only: never sends dates or customer information.
 for (const form of document.querySelectorAll('[data-booking-demo]')) {
   form.addEventListener('submit', function(event) {
