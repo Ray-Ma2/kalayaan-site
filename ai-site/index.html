@@ -17,38 +17,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Manrope:wght@700;800&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Manrope:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --numfont:"Manrope","Zen Kaku Gothic New",sans-serif;
-  --paper:#f6f3ec; --paper-deep:#efe9dd; --card:#fbf8f1;
-  --ink:#21232b; --ink-soft:#4c4e58; --hair:#d8d2c4;
-  --bengara:#a3512b; --bengara-deep:#7f3d1f; --moss:#3f5a3c;
+  --paper:#f5f8fd; --paper-deep:#e9f0fa; --card:#ffffff;
+  --ink:#0f1f3d; --ink-soft:#4a5672; --hair:#d5deeb;
+  --bengara:#1d6ff2; --bengara-deep:#0b3a8c; --moss:#0f6b5c;
   --measure:1080px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;font-size:16px;line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;padding-bottom:78px}
-body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(33,35,43,.045) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(15,31,61,.045) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;z-index:0}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 24px;position:relative;z-index:1}
 a{color:inherit}
-.serif{font-family:"Shippori Mincho",serif}
+.serif{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700}
 .num{font-family:var(--numfont);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 svg.ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 /* header */
-header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);z-index:10}
+header{position:sticky;top:0;background:#f5f8fd;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);z-index:10}
 .header-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.logotype{font-family:"Fraunces",serif;font-weight:500;font-size:1.02rem;letter-spacing:.18em;text-decoration:none}
-.logotype small{font-family:"Shippori Mincho",serif;font-size:.7rem;letter-spacing:.28em;color:var(--ink-soft);margin-left:.9em}
+.logotype{font-family:"Manrope",sans-serif;font-weight:800;font-size:1.02rem;letter-spacing:.18em;text-decoration:none}
+.logotype small{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.28em;color:var(--ink-soft);margin-left:.9em}
 .hbtn{font-size:.82rem;letter-spacing:.1em;text-decoration:none;border:1px solid var(--ink);padding:8px 16px;border-radius:2px;transition:background .25s,color .25s}
 .hbtn:hover{background:var(--ink);color:var(--paper)}
 
 /* hero */
 .hero{padding:88px 0 64px;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.kicker{font-family:"Shippori Mincho",serif;font-size:.84rem;letter-spacing:.42em;color:var(--bengara);margin-bottom:26px}
-.hero h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.32;letter-spacing:.04em}
+.kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.84rem;letter-spacing:.14em;color:var(--bengara);margin-bottom:26px}
+.hero h1{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.32;letter-spacing:.04em}
 .hero h1 .stress{color:var(--bengara)}
 .hero p.lead{margin-top:26px;font-size:1.05rem;color:var(--ink-soft);max-width:34em}
 .cta-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
@@ -62,9 +62,9 @@ header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var
 
 /* before/after device */
 .device{position:relative;padding:8px 0}
-.slate{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:22px 24px;position:relative;box-shadow:0 18px 40px -30px rgba(33,35,43,.45)}
+.slate{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:22px 24px;position:relative;box-shadow:0 18px 40px -30px rgba(15,31,61,.45)}
 .slate + .slate{margin-top:-14px;margin-left:34px}
-.slate .lab{font-family:"Shippori Mincho",serif;font-size:.72rem;letter-spacing:.34em;color:var(--ink-soft)}
+.slate .lab{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.34em;color:var(--ink-soft)}
 .slate .big{font-family:var(--numfont);font-weight:800;font-size:2.2rem;line-height:1.15;margin-top:6px;letter-spacing:-.02em}
 .slate.old .big{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--bengara);text-decoration-thickness:2px}
 .slate.new{border-color:var(--bengara)}
@@ -87,12 +87,12 @@ header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var
 .offer{padding:72px 0 56px}
 .sec-h{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
 .sec-h .en{font-family:var(--numfont);font-weight:800;letter-spacing:.2em;font-size:.76rem;color:var(--bengara-deep)}
-.sec-h h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.55rem;letter-spacing:.04em}
+.sec-h h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:1.55rem;letter-spacing:.04em}
 .ladder{display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:18px;align-items:stretch}
 .step{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px 26px 22px;position:relative;display:flex;flex-direction:column}
 .step.main{border:2px solid var(--bengara);transform:translateY(-10px)}
 .step .no{font-family:var(--numfont);font-weight:800;font-size:.8rem;letter-spacing:.18em;color:var(--bengara-deep)}
-.step h3{font-family:"Shippori Mincho",serif;font-size:1.15rem;margin-top:6px;letter-spacing:.03em}
+.step h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.15rem;margin-top:6px;letter-spacing:.03em}
 .step .price{font-family:var(--numfont);font-weight:800;font-size:3.2rem;line-height:1.05;margin:16px 0 4px;color:var(--ink);letter-spacing:-.03em}
 .step .price b{font-weight:800}
 .step.main .price b{color:var(--bengara-deep)}
@@ -115,7 +115,7 @@ header{position:sticky;top:0;background:#f6f3ec;background:color-mix(in srgb,var
 .smp:hover .shot::after{opacity:1}
 .smp .b{padding:14px 16px 16px}
 .smp .ind{font-family:var(--numfont);font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--bengara-deep)}
-.smp h3{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin-top:2px;letter-spacing:.03em}
+.smp h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.05rem;margin-top:2px;letter-spacing:.03em}
 .smp p{font-size:.84rem;color:var(--ink-soft);margin-top:6px}
 .smp p b{color:var(--ink);font-weight:500}
 .samples .note{font-size:.8rem;color:var(--ink-soft);margin-top:14px}
@@ -130,7 +130,7 @@ details:last-of-type{border-bottom:1px solid var(--hair)}
 summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;gap:14px;padding:26px 0}
 summary::-webkit-details-marker{display:none}
 summary .idx{font-family:var(--numfont);font-weight:800;font-size:1rem;letter-spacing:.14em;color:var(--bengara-deep)}
-summary h3{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.03em;line-height:1.4}
+summary h3{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.03em;line-height:1.4}
 summary .hint{font-size:.86rem;color:var(--ink-soft);margin-top:4px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:400}
 summary .pm{width:40px;height:40px;border:1px solid var(--hair);border-radius:50%;position:relative;transition:transform .3s,border-color .3s}
 summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
@@ -140,7 +140,7 @@ details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
 .panel{padding:0 0 34px 78px;max-width:62em}
 .panel p{margin:10px 0;color:var(--ink)}
 .panel p.soft{color:var(--ink-soft);font-size:.92rem}
-.panel h4{font-family:"Shippori Mincho",serif;font-size:1.05rem;margin:22px 0 8px;letter-spacing:.03em}
+.panel h4{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.05rem;margin:22px 0 8px;letter-spacing:.03em}
 .tblwrap{overflow-x:auto;margin:14px 0}
 table{width:100%;border-collapse:collapse;font-size:.9rem}
 th,td{text-align:left;padding:11px 12px;border-top:1px solid var(--hair);vertical-align:top}
@@ -154,11 +154,11 @@ td.new{color:var(--ink);font-weight:500}
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
 .flow .f{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:14px 14px 12px;font-size:.86rem}
 .flow .f .n{font-family:var(--numfont);font-weight:800;font-size:1.5rem;color:var(--bengara-deep);line-height:1}
-.flow .f b{display:block;margin:6px 0 2px;font-family:"Shippori Mincho",serif;font-size:.98rem}
+.flow .f b{display:block;margin:6px 0 2px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:.98rem}
 .flow .f span{color:var(--ink-soft);font-size:.8rem}
 .mech{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;margin:18px 0}
 .mech .box{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:16px;font-size:.9rem}
-.mech .box b{display:block;font-family:"Shippori Mincho",serif;margin-bottom:4px}
+.mech .box b{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;margin-bottom:4px}
 .mech .box.you{border-color:var(--bengara)}
 .mech .arr{font-family:var(--numfont);font-weight:800;color:var(--bengara-deep);font-size:1.4rem}
 .quote{border-left:3px solid var(--bengara);padding:6px 18px;margin:16px 0;color:var(--ink-soft);font-size:.94rem}
@@ -168,7 +168,7 @@ td.new{color:var(--ink);font-weight:500}
 /* form */
 .contact{padding:64px 0 72px;border-top:1px solid var(--hair)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
-.contact h2{font-family:"Shippori Mincho",serif;font-size:1.7rem;line-height:1.4;letter-spacing:.03em}
+.contact h2{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:1.7rem;line-height:1.4;letter-spacing:.03em}
 .contact p{color:var(--ink-soft);margin-top:14px}
 .form{background:var(--card);border:1px solid var(--hair);border-radius:4px;padding:26px}
 .form label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;margin:14px 0 6px}
@@ -181,10 +181,10 @@ td.new{color:var(--ink);font-weight:500}
 .form .alt a{color:var(--bengara)}
 
 /* sticky cta */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#21232b;background:color-mix(in srgb,var(--ink) 94%,transparent);color:var(--paper);backdrop-filter:blur(6px)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#0f1f3d;background:color-mix(in srgb,var(--ink) 94%,transparent);color:var(--paper);backdrop-filter:blur(6px)}
 .sticky .in{max-width:var(--measure);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .sticky .t{font-size:.9rem;letter-spacing:.04em}
-.sticky .t b{font-family:"Shippori Mincho",serif;font-weight:700}
+.sticky .t b{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900}
 .sticky .btn{padding:11px 20px;font-size:.9rem;border-color:var(--paper);color:var(--paper);background:transparent}
 .sticky .btn:hover{background:var(--paper);color:var(--ink)}
 
