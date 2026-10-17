@@ -239,6 +239,12 @@ html{overflow-x:clip}
 .line-box .btn{width:100%;justify-content:center}
 .form-lead{font-size:.82rem;color:var(--ink-soft);margin:0 0 10px}
 .sticky .btn.btn--line{background:#06C755;border-color:#06C755;color:#fff}
+/* 2026-10-17 フォームを LINE と並べる（LINE アプリに渡らない人・LINE を避けたい人の受け皿） */
+.form-lead{font-size:.95rem;color:var(--ink);font-weight:700;margin:4px 0 10px}
+.line-box .alt{margin:10px 0 0;font-size:.8rem;color:var(--ink-soft)}
+.sticky .btn-pair{display:flex;gap:8px;align-items:center}
+.sticky .btn.btn--form{background:transparent;border-color:var(--paper);color:var(--paper);flex:0 0 auto;width:auto}
+@media (max-width:860px){.sticky .btn-pair{width:100%}.sticky .btn-pair .btn--line{flex:1}}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .thanks{border:2px solid #06C755;padding:22px 20px;background:var(--paper)}
 .thanks .tk{font-family:var(--numfont);font-weight:800;font-size:1.3rem;letter-spacing:.08em;color:var(--bengara-deep)}
@@ -272,9 +278,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>
           LINE で無料診断を申し込む
         </a>
-        <a class="btn btn--ghost" href="#price">料金を見る</a>
+        <a class="btn btn--ghost" href="#diagForm">フォームで申し込む（LINE 不要）</a>
       </div>
-      <div class="cta-note">電話も面談もなし。やり取りは LINE だけで完結します（営業電話もしません）。診断は無料で、現サイトのサイトマップ分析（全ページの棚卸し）と、移せるかどうかを1枚のレポートでお返しします。メールがよい方は<a href="#contact">フォーム</a>からどうぞ。</div>
+      <div class="cta-note">電話も面談もなし。やり取りは LINE かメールで完結します（営業電話もしません）。診断は無料で、現サイトのサイトマップ分析（全ページの棚卸し）と、移せるかどうかを1枚のレポートでお返しします。料金は<a href="#price">こちら</a>。LINE が開かない時は、LINE の検索で「@421djvkn」を。</div>
     </div>
     <div class="device">
       <div class="slate old">
@@ -602,8 +608,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="line-box">
       <p><b>LINE なら、友だち追加して URL を送るだけ。</b>診断結果と見本ページもトークで届きます。電話や面談はありません。</p>
       <a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>LINE で無料診断を申し込む</a>
+      <p class="alt">LINE が開かない時は、LINE の検索で「@421djvkn」。LINE を使わない方は、下のフォームからどうぞ。</p>
     </div>
-    <p class="form-lead">メールで申し込む場合</p>
+    <p class="form-lead">LINE を使わずに申し込む（フォーム・1 分）</p>
     <form class="form" id="diagForm">
       <div class="hp" aria-hidden="true"><label>この欄は空のままにしてください<input name="hp" tabindex="-1" autocomplete="off"></label></div>
       <label for="f_url">ホームページの URL <span style="color:var(--bengara)">*</span></label>
@@ -638,8 +645,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="sticky">
   <div class="in">
-    <div class="t"><b>LINE で完結</b>　3営業日でサイトマップ分析と見本ページをお返しします</div>
-    <a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1">LINE で無料診断を申し込む</a>
+    <div class="t"><b>LINE かフォームで</b>　3営業日でサイトマップ分析と見本ページをお返しします</div>
+    <div class="btn-pair"><a class="btn btn--line" href="https://line.me/R/ti/p/@421djvkn" data-line="1">LINE で無料診断</a><a class="btn btn--form" href="#diagForm">フォーム</a></div>
   </div>
 </div>
 
